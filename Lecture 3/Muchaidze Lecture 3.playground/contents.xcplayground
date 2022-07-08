@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='1 davaleba'/>
+        <page name='2 davaleba'/>
+        <page name='3 davaleba'/>
+        <page name='3.1 davaleba'/>
+        <page name='4 davaleba'/>
+        <page name='4.1 davaleba'/>
+    </pages>
+</playground>
