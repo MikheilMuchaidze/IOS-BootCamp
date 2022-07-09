@@ -27,7 +27,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZn-r1-mNQ">
-                                <rect key="frame" x="30" y="564" width="118" height="24"/>
+                                <rect key="frame" x="29.999999999999993" y="564" width="107.33333333333331" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,10 +87,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yLX-6U-qON" secondAttribute="trailing" constant="50" id="ACc-KI-4EY"/>
                             <constraint firstItem="b0r-r5-KLU" firstAttribute="centerX" secondItem="5b4-Xt-nBx" secondAttribute="centerX" id="DSg-ys-Etv"/>
                             <constraint firstItem="JjP-b1-3Wp" firstAttribute="centerX" secondItem="gMm-c8-rLs" secondAttribute="centerX" id="GUx-Z6-rQt"/>
+                            <constraint firstItem="5b4-Xt-nBx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eZn-r1-mNQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Imr-pc-K5X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gMm-c8-rLs" secondAttribute="trailing" constant="50" id="K6B-fe-KUz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9nt-Ce-JL0" secondAttribute="bottom" constant="150" id="MEN-5A-aG9"/>
                             <constraint firstItem="BjX-pP-Qqb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Mzb-CP-GIH"/>
                             <constraint firstItem="yLX-6U-qON" firstAttribute="centerY" secondItem="9nt-Ce-JL0" secondAttribute="centerY" id="OT5-Wn-vMb"/>
+                            <constraint firstItem="eZn-r1-mNQ" firstAttribute="top" secondItem="JjP-b1-3Wp" secondAttribute="bottom" constant="150" id="OXb-Yw-D3e"/>
                             <constraint firstItem="eZn-r1-mNQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="SdZ-66-gA0"/>
                             <constraint firstItem="yLX-6U-qON" firstAttribute="width" secondItem="9nt-Ce-JL0" secondAttribute="width" id="Yi1-KO-D1l"/>
                             <constraint firstItem="b0r-r5-KLU" firstAttribute="leading" secondItem="BjX-pP-Qqb" secondAttribute="trailing" constant="20" id="aQc-2l-jjQ"/>
@@ -98,7 +100,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5b4-Xt-nBx" secondAttribute="trailing" constant="30" id="d6U-CU-hIG"/>
                             <constraint firstItem="gMm-c8-rLs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="eP8-hJ-bOI"/>
                             <constraint firstItem="gMm-c8-rLs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="gRM-Zv-XTQ"/>
-                            <constraint firstItem="5b4-Xt-nBx" firstAttribute="leading" secondItem="eZn-r1-mNQ" secondAttribute="trailing" id="gYn-7a-JWh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b0r-r5-KLU" secondAttribute="trailing" constant="30" id="hcw-7a-fxW"/>
                             <constraint firstItem="b0r-r5-KLU" firstAttribute="centerY" secondItem="BjX-pP-Qqb" secondAttribute="centerY" id="rwe-YZ-8td"/>
                             <constraint firstItem="JjP-b1-3Wp" firstAttribute="top" secondItem="gMm-c8-rLs" secondAttribute="bottom" id="yP7-Fe-eso"/>

@@ -9,19 +9,19 @@ import UIKit
 
 class DetailsPage: UIViewController {
 
-    @IBOutlet weak var userNameDetails: UILabel!
+    @IBOutlet weak var userNameDetails: UILabel! 
     @IBOutlet weak var userEmailDetails: UILabel!
     
-    var userNameFromRegistration = ""
-    var userEmailFromRegistration = ""
-
-    
+    var userNameFromRegistrationDetails = ""
+    var userEmailFromRegistrationDetails = ""
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        userNameDetails.text = userNameFromRegistration
-        userEmailDetails.text = userEmailFromRegistration
+        print(userNameFromRegistrationDetails)
+        userNameDetails.text = userNameFromRegistrationDetails
+        print(userEmailFromRegistrationDetails)
+        userEmailDetails.text = userEmailFromRegistrationDetails
     }
-
+        
 }

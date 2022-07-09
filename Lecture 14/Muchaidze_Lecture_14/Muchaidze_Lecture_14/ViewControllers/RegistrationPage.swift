@@ -13,14 +13,11 @@ class RegistrationPage: UIViewController {
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var userNameInput: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    
-
     @IBAction func signUpButtons(_ sender: Any) {
         guard let userName = userNameInput.text else { return }
         guard let userPassword = passwordInput.text else { return }
@@ -33,7 +30,6 @@ class RegistrationPage: UIViewController {
             self.present(alertMessage, animated: true)
             return
         }
-        
         checkUserInputsAndGoBack()
     }
     
@@ -41,15 +37,15 @@ class RegistrationPage: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
-    
     func checkUserInputsAndGoBack() {
         guard let registeredUserName = userNameInput.text else { return }
         guard let registeredUserPassword = passwordInput.text else { return }
+        guard let registeredUserEmail = emailInput.text else { return }
         
         let goToLoginPage = storyboard?.instantiateViewController(withIdentifier: "LoginPage") as? LoginPage
         goToLoginPage?.userNameFromRegistration = registeredUserName
         goToLoginPage?.userPasswordFromRegistration = registeredUserPassword
+        goToLoginPage?.userEmailFromRegistration = registeredUserEmail
         self.navigationController?.pushViewController(goToLoginPage!, animated: true)
     }
     
