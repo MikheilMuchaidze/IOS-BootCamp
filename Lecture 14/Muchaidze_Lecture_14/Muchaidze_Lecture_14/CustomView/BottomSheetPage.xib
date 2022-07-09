@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BottomSheetPage" customModule="Muchaidze_Lecture_14" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="204"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure want to sign out?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8C-zh-luL">
+                    <rect key="frame" x="40" y="44" width="334" height="28.5"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="25"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iQ-xR-HcF">
+                    <rect key="frame" x="50" y="111" width="100" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="lnd-3u-8LU"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Yes">
+                        <fontDescription key="titleFontDescription" name="Georgia" family="Georgia" pointSize="25"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ce-uA-V0h">
+                    <rect key="frame" x="264" y="111" width="100" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="SbM-Yz-7Ex"/>
+                    </constraints>
+                    <color key="tintColor" red="0.27763976969999998" green="0.73294806410000002" blue="0.76871567959999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="No">
+                        <fontDescription key="titleFontDescription" name="Georgia" family="Georgia" pointSize="25"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="A8C-zh-luL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="AMY-gw-Ljx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5ce-uA-V0h" secondAttribute="trailing" constant="50" id="DHe-xh-Tfb"/>
+                <constraint firstItem="A8C-zh-luL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DTt-xt-yrO"/>
+                <constraint firstItem="9iQ-xR-HcF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="Jt4-Kr-Jif"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5ce-uA-V0h" secondAttribute="bottom" constant="50" id="Ve1-n2-5KR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9iQ-xR-HcF" secondAttribute="bottom" constant="50" id="rbU-xE-xBS"/>
+                <constraint firstItem="5ce-uA-V0h" firstAttribute="centerY" secondItem="9iQ-xR-HcF" secondAttribute="centerY" id="yHZ-jf-4J9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="358.92857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
