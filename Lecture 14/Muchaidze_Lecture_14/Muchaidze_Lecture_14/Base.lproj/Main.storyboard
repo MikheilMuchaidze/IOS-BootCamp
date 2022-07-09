@@ -44,6 +44,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Sign-in">
                                     <fontDescription key="titleFontDescription" name="Georgia" family="Georgia" pointSize="25"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="signInGoToDetails:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cI5-yt-qiD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLX-6U-qON">
                                 <rect key="frame" x="239" y="699.33333333333337" width="139" height="42.666666666666629"/>
@@ -102,6 +105,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VeA-TN-dnj"/>
+                    <connections>
+                        <outlet property="userNameLogin" destination="5b4-Xt-nBx" id="NiY-BG-Ewf"/>
+                        <outlet property="userPassworLogin" destination="b0r-r5-KLU" id="RZb-3R-rvv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,8 +285,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eG-Kj-Hgz">
-                                <rect key="frame" x="30" y="618" width="98" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eG-Kj-Hgz">
+                                <rect key="frame" x="30.000000000000004" y="618" width="57.333333333333343" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -316,6 +323,10 @@
                             <constraint firstItem="KZ5-jz-FqA" firstAttribute="bottom" secondItem="7eG-Kj-Hgz" secondAttribute="bottom" constant="250" id="ud3-jU-dnm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userEmailDetails" destination="pUR-vo-SKC" id="0Vg-fN-4TX"/>
+                        <outlet property="userNameDetails" destination="Qao-vb-xb7" id="clB-3V-1bm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXS-UU-mRe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

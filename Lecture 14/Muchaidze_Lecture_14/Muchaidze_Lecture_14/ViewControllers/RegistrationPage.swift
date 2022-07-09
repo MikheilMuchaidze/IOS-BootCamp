@@ -33,10 +33,24 @@ class RegistrationPage: UIViewController {
             self.present(alertMessage, animated: true)
             return
         }
+        
+        checkUserInputsAndGoBack()
     }
     
     @IBAction func backToLoginPage(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    func checkUserInputsAndGoBack() {
+        guard let registeredUserName = userNameInput.text else { return }
+        guard let registeredUserPassword = passwordInput.text else { return }
+        
+        let goToLoginPage = storyboard?.instantiateViewController(withIdentifier: "LoginPage") as? LoginPage
+        goToLoginPage?.userNameFromRegistration = registeredUserName
+        goToLoginPage?.userPasswordFromRegistration = registeredUserPassword
+        self.navigationController?.pushViewController(goToLoginPage!, animated: true)
     }
     
 }
