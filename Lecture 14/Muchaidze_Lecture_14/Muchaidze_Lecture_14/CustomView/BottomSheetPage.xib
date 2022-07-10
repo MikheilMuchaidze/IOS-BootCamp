@@ -30,6 +30,9 @@
                     <buttonConfiguration key="configuration" style="filled" title="Yes">
                         <fontDescription key="titleFontDescription" name="Georgia" family="Georgia" pointSize="25"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="logOutYes:" destination="iN0-l3-epB" eventType="touchUpInside" id="C7u-iW-90X"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ce-uA-V0h">
                     <rect key="frame" x="264" y="111" width="100" height="43"/>
@@ -41,6 +44,9 @@
                     <buttonConfiguration key="configuration" style="filled" title="No">
                         <fontDescription key="titleFontDescription" name="Georgia" family="Georgia" pointSize="25"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="logOutNo:" destination="iN0-l3-epB" eventType="touchUpInside" id="zbQ-Gu-zfF"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

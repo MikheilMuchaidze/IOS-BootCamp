@@ -24,4 +24,8 @@ class DetailsPage: UIViewController {
         userEmailDetails.text = userEmailFromRegistrationDetails
     }
         
+    @IBAction func signOutButton(_ sender: Any) {
+        let popup = BottomSheetPage()
+        view.addSubview(popup)
+    }
 }

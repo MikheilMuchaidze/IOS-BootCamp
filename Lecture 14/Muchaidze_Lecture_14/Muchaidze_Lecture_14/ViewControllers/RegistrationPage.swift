@@ -8,10 +8,13 @@
 import UIKit
 
 class RegistrationPage: UIViewController {
+    
+//    @propertyWrapper
 
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var userNameInput: UITextField!
+    @IBOutlet weak var passwordConfirmInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,14 @@ class RegistrationPage: UIViewController {
             self.present(alertMessage, animated: true)
             return
         }
+        
+        if (passwordInput.text != passwordConfirmInput.text) {
+            let alertMessage = UIAlertController(title: "Password don't match", message: "Password and confirm password do not match, please try again", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+            alertMessage.addAction(okAction)
+            self.present(alertMessage, animated: true)
+        }
+        
         checkUserInputsAndGoBack()
     }
     
