@@ -14,6 +14,7 @@
 		24ED72EF287DBA1E003A8D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24ED72EE287DBA1E003A8D76 /* Assets.xcassets */; };
 		24ED72F2287DBA1E003A8D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24ED72F0287DBA1E003A8D76 /* LaunchScreen.storyboard */; };
 		24ED72FA287DC32A003A8D76 /* DetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED72F9287DC32A003A8D76 /* DetailsPage.swift */; };
+		24ED72FE287DCF57003A8D76 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED72FD287DCF57003A8D76 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		24ED72F1287DBA1E003A8D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24ED72F3287DBA1E003A8D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24ED72F9287DC32A003A8D76 /* DetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPage.swift; sourceTree = "<group>"; };
+		24ED72FD287DCF57003A8D76 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				24ED72E9287DBA1D003A8D76 /* MovieList.swift */,
 				24ED72F9287DC32A003A8D76 /* DetailsPage.swift */,
 				24ED72EB287DBA1D003A8D76 /* Main.storyboard */,
+				24ED72FD287DCF57003A8D76 /* TableViewCell.swift */,
 				24ED72EE287DBA1E003A8D76 /* Assets.xcassets */,
 				24ED72F0287DBA1E003A8D76 /* LaunchScreen.storyboard */,
 				24ED72F3287DBA1E003A8D76 /* Info.plist */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24ED72FE287DCF57003A8D76 /* TableViewCell.swift in Sources */,
 				24ED72FA287DC32A003A8D76 /* DetailsPage.swift in Sources */,
 				24ED72EA287DBA1D003A8D76 /* MovieList.swift in Sources */,
 				24ED72E6287DBA1D003A8D76 /* AppDelegate.swift in Sources */,
