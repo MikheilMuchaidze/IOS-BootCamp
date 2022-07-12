@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MovieList: UIViewController {
     
     struct Movie {
         let title: String
@@ -31,9 +31,6 @@ class ViewController: UIViewController {
         Movie(title: "Gotham", releaseDate: "2014", imdb: 7.3, mainActor: "Ben McKenzie", seen: false, isFavourite: false, description: "About childhood and hisyory of becoming betman from his childhood"),
         Movie(title: "Narcos", releaseDate: "2015", imdb: 8.8, mainActor: "Wagner Moura", seen: false, isFavourite: false, description: "About one of the greatest drug dealers of all time")
     ]
-    
-    
-        
 
 
     override func viewDidLoad() {
