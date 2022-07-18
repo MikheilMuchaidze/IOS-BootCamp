@@ -20,6 +20,10 @@ class MovieListController: UIViewController, UITableViewDelegate, UITableViewDat
         Cell.imdbLbl.text = "\(thisMovies.imdb)"
         return Cell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Seen/Unseen test"
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
