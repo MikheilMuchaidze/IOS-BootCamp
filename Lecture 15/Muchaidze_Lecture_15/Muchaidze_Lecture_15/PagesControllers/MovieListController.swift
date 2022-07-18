@@ -14,11 +14,11 @@ class MovieListController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let Cell = tableView.dequeueReusableCell(withIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
         let thisMovies = moviesList[indexPath.row]
-        Cell.titleLbl.text = thisMovies.title
-        Cell.imdbLbl.text = "\(thisMovies.imdb)"
-        return Cell
+        cell.titleLbl.text = thisMovies.title
+        cell.imdbLbl.text = "\(thisMovies.imdb)"
+        return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
