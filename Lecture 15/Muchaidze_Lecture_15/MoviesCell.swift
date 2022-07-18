@@ -1,9 +1,3 @@
-//
-//  MoviesCell.swift
-//  Muchaidze_Lecture_15
-//
-//  Created by Misha Muchaidze on 20220714...
-//
 
 import UIKit
 

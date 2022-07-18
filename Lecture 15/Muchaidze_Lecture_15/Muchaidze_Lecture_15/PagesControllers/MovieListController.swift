@@ -4,19 +4,23 @@ import UIKit
 class MovieListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     @IBOutlet weak var mainTableView: UITableView!
+        
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         moviesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
+        let Cell = tableView.dequeueReusableCell(withIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
         let thisMovies = moviesList[indexPath.row]
-        cell.titleLbl.text = thisMovies.title
-        cell.imdbLbl.text = "\(thisMovies.imdb)"
-        return cell
+        Cell.titleLbl.text = thisMovies.title
+        Cell.imdbLbl.text = "\(thisMovies.imdb)"
+        return Cell
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -33,7 +37,6 @@ class MovieListController: UIViewController, UITableViewDelegate, UITableViewDat
             let selectedMovie = moviesList[indexPath.row]
             tableViewDetail!.moviesList = selectedMovie
             self.mainTableView.deselectRow(at: indexPath, animated: true)
-            
         }
     }
     
