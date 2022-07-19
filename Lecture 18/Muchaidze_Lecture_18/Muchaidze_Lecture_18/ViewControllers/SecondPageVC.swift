@@ -15,8 +15,10 @@ class SecondPageVC: UIViewController {
         
         imageTest.isUserInteractionEnabled = true
         
-        lessThenOneSec()
-        moreThenOneSec()
+//        lessThenOneSec()
+//        moreThenOneSec()
+        
+        addPinch()
         
         imageTest.isHidden = false
     }
@@ -55,6 +57,23 @@ class SecondPageVC: UIViewController {
             self.imageTest.alpha = 0
         } completion: { finished in
             self.imageTest.isHidden = true
+        }
+    }
+    
+    //add swipe funcionality to image
+    func addPinch() {
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(pinched(gesture:)))
+        imageTest.addGestureRecognizer(pinchGesture)
+    }
+    
+    @objc func pinched(gesture: UIPinchGestureRecognizer) {
+        gesture.view?.transform = (gesture.view?.transform.scaledBy(x: gesture.scale, y: gesture.scale))!
+        gesture.scale = 1
+
+        if gesture.state == .began || gesture.state == .changed {
+            print(gesture.scale)
+        } else if gesture.state == .ended {
+            self.imageTest.transform = CGAffineTransform.identity
         }
     }
         
