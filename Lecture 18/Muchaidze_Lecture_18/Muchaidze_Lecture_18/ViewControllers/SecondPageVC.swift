@@ -14,16 +14,19 @@ class SecondPageVC: UIViewController {
         super.viewDidLoad()
         
         imageTest.isUserInteractionEnabled = true
-        
+        imageTest.isHidden = false
+
         //ratomgac yvela ertad ver mushaobs kargad ?????
 //        lessThenOneSec()
 //        moreThenOneSec()
         
         addPinch()
+
+        imageTest.addGestureRecognizer(addSwipe(direction: .up))
+        imageTest.addGestureRecognizer(addSwipe(direction: .down))
+        imageTest.addGestureRecognizer(addSwipe(direction: .left))
+        imageTest.addGestureRecognizer(addSwipe(direction: .right))
         
-        imageTest.isHidden = false
-        
-                
     }
 
 
@@ -82,5 +85,36 @@ class SecondPageVC: UIViewController {
             NotificationCenter.default.post(name: Notification.Name("ge.Muchaidze-Lecture-18.colorChange"), object: 5, userInfo: information)
         }
     }
+    
+    
+    //add swipe gesture to image
+    func addSwipe(direction: UISwipeGestureRecognizer.Direction) -> UISwipeGestureRecognizer {
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipe(gesture:)))
+        swipeGesture.direction = direction
+        return swipeGesture
+    }
+    
+    @objc func swipe(gesture: UISwipeGestureRecognizer) {
+        var imgFrame = imageTest.frame
+        
+        switch gesture.direction {
+        case .up :
+            imgFrame.origin.y -= 50
+        case .down :
+            imgFrame.origin.y += 50
+        case .left :
+            imgFrame.origin.x -= 50
+        case .right :
+            imgFrame.origin.x += 50
+        default:
+            break
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.imageTest.frame = imgFrame
+        }
+        
+    }
+    
+    
         
 }

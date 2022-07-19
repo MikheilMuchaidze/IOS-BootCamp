@@ -12,6 +12,7 @@ class FirstPageVC: UIViewController {
     @IBAction func resetBackgroundColor(_ sender: Any) {
         self.view.backgroundColor = .white
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,10 +53,11 @@ class FirstPageVC: UIViewController {
     
     //adding tap action to red circle
     func addTapRedCircle() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RedCircleTapAction))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGoToSecondPage))
         redCircle.addGestureRecognizer(tapGesture)
     }
-    @objc func RedCircleTapAction() {
+    
+    @objc func tapGoToSecondPage() {
         goToSecondPage()
     }
     
@@ -96,14 +98,10 @@ class FirstPageVC: UIViewController {
     
     //adding tap action to purple triangle
     func addTapPurpleTriangle() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PurpleTriangleTapAction))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGoToSecondPage))
         purpleTriangle.addGestureRecognizer(tapGesture)
     }
-    
-    @objc func PurpleTriangleTapAction() {
-        goToSecondPage()
-    }
-    
+        
     //adding tap action to black triangle
     func addSwipeBlackTriangle() {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(blackTriangleSwipeAction(gesture:)))
