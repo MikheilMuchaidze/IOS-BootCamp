@@ -15,12 +15,15 @@ class SecondPageVC: UIViewController {
         
         imageTest.isUserInteractionEnabled = true
         
+        //ratomgac yvela ertad ver mushaobs kargad ?????
 //        lessThenOneSec()
 //        moreThenOneSec()
         
         addPinch()
         
         imageTest.isHidden = false
+        
+                
     }
 
 
@@ -74,6 +77,9 @@ class SecondPageVC: UIViewController {
             print(gesture.scale)
         } else if gesture.state == .ended {
             self.imageTest.transform = CGAffineTransform.identity
+            
+            let information = ["color": UIColor.gray]
+            NotificationCenter.default.post(name: Notification.Name("ge.Muchaidze-Lecture-18.colorChange"), object: 5, userInfo: information)
         }
     }
         

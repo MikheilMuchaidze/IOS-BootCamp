@@ -9,6 +9,9 @@ class FirstPageVC: UIViewController {
     @IBOutlet weak var purpleTriangle: UIImageView!
     @IBOutlet weak var blackTriangle: UIImageView!
     
+    @IBAction func resetBackgroundColor(_ sender: Any) {
+        self.view.backgroundColor = .white
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,8 +26,21 @@ class FirstPageVC: UIViewController {
         
         blackTriangle.isUserInteractionEnabled = true
         addSwipeBlackTriangle()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeBackgroundColor), name: Notification.Name("ge.Muchaidze-Lecture-18.colorChange"), object: nil)
     }
     
+    //funcion for obeserver to change color
+    @objc func changeBackgroundColor(notification: Notification) {
+        if let color = notification.userInfo?["color"] as? UIColor {
+            view.backgroundColor = color
+        }
+        
+        if let number = notification.object as? Int {
+            print(number)
+        }
+    }
+
     
     // MARK: added gestures to circles
 

@@ -48,16 +48,30 @@
                                     <constraint firstAttribute="height" constant="120" id="LZd-Ua-FZr"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdL-2K-nF4">
+                                <rect key="frame" x="164" y="443" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rdL-2K-nF4" secondAttribute="height" multiplier="2:1" id="VLe-7l-IIy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="fAe-pz-OZS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                                <connections>
+                                    <action selector="resetBackgroundColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0cn-AK-lLE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eF3-Uu-xe9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Abv-pW-FEh"/>
+                            <constraint firstItem="rdL-2K-nF4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KbN-7m-08F"/>
                             <constraint firstItem="eF3-Uu-xe9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Kqb-Ey-Vrw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cbM-Sc-JZR" secondAttribute="trailing" constant="50" id="Qlj-3R-Lne"/>
                             <constraint firstItem="Zbb-l9-9sH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="S8w-xR-FIY"/>
                             <constraint firstItem="Zbb-l9-9sH" firstAttribute="top" secondItem="eF3-Uu-xe9" secondAttribute="bottom" constant="50" id="SzH-eq-HBG"/>
                             <constraint firstItem="cbM-Sc-JZR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="W5C-0U-sVN"/>
+                            <constraint firstItem="rdL-2K-nF4" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gwE-fd-eJu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lgm-vb-COp" secondAttribute="trailing" constant="50" id="nxo-qu-hqh"/>
                             <constraint firstItem="lgm-vb-COp" firstAttribute="top" secondItem="cbM-Sc-JZR" secondAttribute="bottom" constant="50" id="wyz-XO-Til"/>
                         </constraints>
