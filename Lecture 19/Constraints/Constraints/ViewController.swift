@@ -216,7 +216,6 @@ class ViewController: UIViewController {
                                         constant: -50).isActive = true
     }
     
-    
     func addBottomView2() {
         bottomView2.translatesAutoresizingMaskIntoConstraints = false
         bottomView2.backgroundColor = .blue.withAlphaComponent(0.5)
@@ -256,6 +255,7 @@ class ViewController: UIViewController {
         
         
     }
+    
     func addBottomView3() {
         bottomView3.translatesAutoresizingMaskIntoConstraints = false
         bottomView3.backgroundColor = .blue
@@ -302,31 +302,31 @@ class ViewController: UIViewController {
 }
 
 
-#if canImport(swiftUI) && DEBUG
-import SwiftUI
-struct PreviewViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        ViewControllerPreview {
-            ViewController()
-        }.previewDevice("iPhone 12")
-    }
-}
-
-struct ViewControllerPreview<ViewController: UIViewController>: UIViewControllerRepresentable {
-    let viewControllerBuilder: () -> UIViewController
-
-    init(_ viewControllerBuilder: @escaping () -> UIViewContzroller) {
-        self.viewControllerBuilder = viewControllerBuilder
-    }
-
-    func makeUIViewController(context: Context) -> some UIViewController {
-        return viewControllerBuilder()
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-    }
-}
-#endif
+//#if canImport(swiftUI) && DEBUG
+//import SwiftUI
+//struct PreviewViewController_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ViewControllerPreview {
+//            ViewController()
+//        }.previewDevice("iPhone 12")
+//    }
+//}
+//
+//struct ViewControllerPreview<ViewController: UIViewController>: UIViewControllerRepresentable {
+//    let viewControllerBuilder: () -> UIViewController
+//
+//    init(_ viewControllerBuilder: @escaping () -> UIViewController) {
+//        self.viewControllerBuilder = viewControllerBuilder
+//    }
+//
+//    func makeUIViewController(context: Context) -> some UIViewController {
+//        return viewControllerBuilder()
+//    }
+//
+//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+//    }
+//}
+//#endif
 
 
 
