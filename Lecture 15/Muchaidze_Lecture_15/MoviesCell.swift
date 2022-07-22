@@ -1,10 +1,13 @@
 
 import UIKit
 
-class MoviesCell: UITableViewCell {
 
+class MoviesCell: UITableViewCell {
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
@@ -20,9 +23,6 @@ class MoviesCell: UITableViewCell {
     @IBAction func seenUnseenBtn(_ sender: Any) {
         
     }
-    
-    
-    
 }
 
 

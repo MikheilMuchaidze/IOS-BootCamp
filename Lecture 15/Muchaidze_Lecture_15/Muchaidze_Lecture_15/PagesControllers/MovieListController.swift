@@ -5,17 +5,19 @@ class MovieListController: UIViewController {
             
     @IBOutlet weak var mainTableView: UITableView!
         
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        
     }
     
 }
 
+
 extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:

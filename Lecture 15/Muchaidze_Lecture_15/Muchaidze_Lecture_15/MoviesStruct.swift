@@ -4,12 +4,12 @@ public struct Movie {
     let releaseDate: String
     let imdb: Double
     let mainActor: String
-    let seen: Bool
-    let isFavourite: Bool
+    var seen: Bool
+    var isFavourite: Bool
     let description: String
 }
 
-let moviesList = [
+var moviesList = [
     Movie(title: "Avatar", releaseDate: "2009", imdb: 8.0, mainActor: "Sam Worthington", seen: false, isFavourite: false, description: "About humans controlling humanoid robots with help of specific technology"),
     Movie(title: "I Am Legend", releaseDate: "2007", imdb: 6.7, mainActor: "Will Smith", seen: true, isFavourite: true, description: "About lonely man and his dog surviving post-apocalyptic world and fighting zombies from time to time"),
     Movie(title: "300", releaseDate: "2006", imdb: 7.8, mainActor: "Gerard Butler", seen: true, isFavourite: false, description: "About last 300 spartans standing and fihting for there country against great enemy"),
