@@ -33,11 +33,11 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let labelNotSeen = UILabel()
-        labelNotSeen.text = "Not seen"
+        labelNotSeen.text = " Not seen"
         labelNotSeen.backgroundColor = UIColor.green
         
         let labelSeen = UILabel()
-        labelSeen.text = "Seen"
+        labelSeen.text = " Seen"
         labelSeen.backgroundColor = UIColor.gray
         
         if section == 0 {
