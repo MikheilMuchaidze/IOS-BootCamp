@@ -2,22 +2,32 @@
 import UIKit
 
 class MovieListController: UIViewController {
-            
+
     @IBOutlet weak var mainTableView: UITableView!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        
     }
     
 }
 
-
-extension MovieListController: UITableViewDelegate, UITableViewDataSource {
+extension MovieListController: UITableViewDelegate, UITableViewDataSource, testDelegate {
     
+    func seenUnseen(cell: MoviesCell) {
+        let indexPath = mainTableView.indexPath(for: cell)
+        var movie = moviesList[indexPath!.row]
+        movie.seen.toggle()
         
+        
+//        if let indexPath = mainTableView.indexPath(for: cell) {
+//            var movie = moviesList[indexPath.row]
+//            movie.seen.toggle()
+//            mainTableView.reloadData()
+//        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -51,11 +61,13 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
-        
-        let thisMovies = indexPath.section == 0 ? moviesSeen[indexPath.row] : moviesNotSeen[indexPath.row]
+                
+        let thisMovies = indexPath.section == 0 ? moviesNotSeen[indexPath.row] : moviesSeen[indexPath.row]
+        cell.seenNotSeenDelegate = self
         
         cell.titleLbl.text = "\(thisMovies.title)"
         cell.imdbLbl.text = "\(thisMovies.imdb)"
+        cell.seenNotSeenStatus.tintColor = thisMovies.seen == true ? UIColor.green : UIColor.red
         return cell
     }
     
@@ -74,4 +86,23 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    //MARK: delegaciaaaaaa
+//    func seenUnseen(cell: MoviesCell) {
+//        if let indexPath = mainTableView.indexPath(for: cell) {
+//            var movieRow = moviesList[indexPath.row]
+//            movieRow.seen = true
+//            mainTableView.reloadData()
+//        }
+//    }
+
+    
 }
+
+
+
+    
+    
+    
+    
+    
+

@@ -43,29 +43,39 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR6-14-o78">
-                                                    <rect key="frame" x="256.66666666666669" y="15" width="128.66666666666669" height="70"/>
+                                                    <rect key="frame" x="256.66666666666669" y="5" width="128.66666666666669" height="50"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Seen/Unseen"/>
                                                     <connections>
                                                         <action selector="seenUnseenBtn:" destination="Spf-DA-9uI" eventType="touchUpInside" id="XKs-Hl-pOa"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gEp-YH-cQY">
+                                                    <rect key="frame" x="304" y="56.000000000000007" width="34" height="32.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gEp-YH-cQY" secondAttribute="height" multiplier="1:1" id="7ga-RG-arM"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xwa-nI-uXy" firstAttribute="height" secondItem="MVd-pt-vIY" secondAttribute="height" id="Jyv-GL-2gD"/>
                                                 <constraint firstItem="xwa-nI-uXy" firstAttribute="top" secondItem="f5u-AW-m1l" secondAttribute="topMargin" constant="5" id="Mb2-UU-Wl1"/>
                                                 <constraint firstItem="xwa-nI-uXy" firstAttribute="leading" secondItem="f5u-AW-m1l" secondAttribute="leadingMargin" constant="20" id="bMv-EL-TqC"/>
-                                                <constraint firstItem="ZR6-14-o78" firstAttribute="height" secondItem="f5u-AW-m1l" secondAttribute="height" multiplier="0.7" id="dJU-AX-EYO"/>
+                                                <constraint firstItem="gEp-YH-cQY" firstAttribute="centerX" secondItem="ZR6-14-o78" secondAttribute="centerX" id="bhy-zf-uWW"/>
+                                                <constraint firstItem="ZR6-14-o78" firstAttribute="height" secondItem="f5u-AW-m1l" secondAttribute="height" multiplier="0.5" id="dJU-AX-EYO"/>
                                                 <constraint firstItem="xwa-nI-uXy" firstAttribute="centerX" secondItem="MVd-pt-vIY" secondAttribute="centerX" id="ebw-45-r9H"/>
                                                 <constraint firstItem="ZR6-14-o78" firstAttribute="width" secondItem="f5u-AW-m1l" secondAttribute="width" multiplier="0.3" id="gc9-rD-pf3"/>
                                                 <constraint firstItem="xwa-nI-uXy" firstAttribute="width" secondItem="MVd-pt-vIY" secondAttribute="width" id="hct-bP-cFc"/>
                                                 <constraint firstItem="ZR6-14-o78" firstAttribute="centerX" secondItem="f5u-AW-m1l" secondAttribute="centerX" multiplier="1.5" id="iTw-Q8-hKQ"/>
-                                                <constraint firstItem="ZR6-14-o78" firstAttribute="centerY" secondItem="f5u-AW-m1l" secondAttribute="centerY" id="khk-Cy-4WV"/>
+                                                <constraint firstItem="ZR6-14-o78" firstAttribute="centerY" secondItem="f5u-AW-m1l" secondAttribute="centerY" multiplier="0.6" id="khk-Cy-4WV"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="MVd-pt-vIY" secondAttribute="bottom" constant="5" id="pQw-R0-0aF"/>
+                                                <constraint firstItem="gEp-YH-cQY" firstAttribute="top" secondItem="ZR6-14-o78" secondAttribute="bottom" id="qPg-vE-YTF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gEp-YH-cQY" secondAttribute="bottom" id="riW-tv-Whs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imdbLbl" destination="MVd-pt-vIY" id="LAP-fb-fbc"/>
+                                            <outlet property="seenNotSeenStatus" destination="gEp-YH-cQY" id="vZp-ns-upm"/>
                                             <outlet property="titleLbl" destination="xwa-nI-uXy" id="30z-Um-Eew"/>
                                         </connections>
                                     </tableViewCell>
@@ -187,6 +197,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

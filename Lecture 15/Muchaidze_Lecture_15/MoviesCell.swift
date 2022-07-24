@@ -2,12 +2,16 @@
 import UIKit
 
 
+protocol testDelegate {
+    func seenUnseen(cell: MoviesCell)
+}
+
 class MoviesCell: UITableViewCell {
     
+    var seenNotSeenDelegate: testDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         // Initialization code
     }
 
@@ -19,10 +23,12 @@ class MoviesCell: UITableViewCell {
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var imdbLbl: UILabel!
+    @IBOutlet weak var seenNotSeenStatus: UIImageView!
     
     @IBAction func seenUnseenBtn(_ sender: Any) {
-        
+        seenNotSeenDelegate?.seenUnseen(cell: self)
+        print("seen status changed")
     }
-}
 
+}
 
