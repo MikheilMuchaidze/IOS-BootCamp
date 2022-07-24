@@ -19,13 +19,7 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource, testD
         let indexPath = mainTableView.indexPath(for: cell)
         var movie = moviesList[indexPath!.row]
         movie.seen.toggle()
-        
-        
-//        if let indexPath = mainTableView.indexPath(for: cell) {
-//            var movie = moviesList[indexPath.row]
-//            movie.seen.toggle()
-//            mainTableView.reloadData()
-//        }
+        mainTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
