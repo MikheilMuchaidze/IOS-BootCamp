@@ -1,14 +1,36 @@
 
-public struct Movie {
+//public struct Movie {
+//
+//    let title: String
+//    let releaseDate: String
+//    let imdb: Double
+//    let mainActor: String
+//    var seen: Bool
+//    var isFavourite: Bool
+//    let description: String
+//}
 
-    let title: String
-    let releaseDate: String
-    let imdb: Double
-    let mainActor: String
-    var seen: Bool
-    var isFavourite: Bool
-    let description: String
+
+public class Movie {
+  let title: String
+  let releaseDate: String
+  let imdb: Double
+  let mainActor: String
+  var seen: Bool
+  var isFavourite: Bool
+  let description: String
+    
+  init(title: String, releaseDate: String, imdb: Double, mainActor: String, seen: Bool, isFavourite: Bool, description: String) {
+    self.title = title
+    self.releaseDate = releaseDate
+    self.imdb = imdb
+    self.mainActor = mainActor
+    self.seen = seen
+    self.isFavourite = isFavourite
+    self.description = description
+  }
 }
+
 
 var moviesList = [
     Movie(title: "Avatar", releaseDate: "2009", imdb: 8.0, mainActor: "Sam Worthington", seen: false, isFavourite: false, description: "About humans controlling humanoid robots with help of specific technology"),
@@ -23,7 +45,7 @@ var moviesList = [
     Movie(title: "Narcos", releaseDate: "2015", imdb: 8.8, mainActor: "Wagner Moura", seen: false, isFavourite: false, description: "About one of the greatest drug dealers of all time")
 ]
 
-public var moviesSeen = moviesList.filter { $0.seen == true }
-public var moviesNotSeen = moviesList.filter { $0.seen == false }
+//public var moviesSeen = moviesList.filter { $0.seen == true }
+//public var moviesNotSeen = moviesList.filter { $0.seen == false }
 
 

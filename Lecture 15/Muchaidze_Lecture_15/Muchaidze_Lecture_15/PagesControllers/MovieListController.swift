@@ -16,18 +16,23 @@ class MovieListController: UIViewController {
 extension MovieListController: UITableViewDelegate, UITableViewDataSource, testDelegate {
     
     func seenUnseen(cell: MoviesCell) {
-        let indexPath = mainTableView.indexPath(for: cell)
-        var movie = moviesList[indexPath!.row]
+        let movieTitle = cell.titleLbl.text
+        
+        guard let movie = moviesList.first(where: {
+            $0.title == movieTitle
+        }) else { return }
+        
         movie.seen.toggle()
+        
         mainTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return moviesList.count - moviesSeen.count
+            return moviesList.filter { $0.seen == false }.count
         case 1:
-            return moviesSeen.count
+            return moviesList.filter { $0.seen == true }.count
         default:
             return 0
         }
@@ -55,8 +60,9 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource, testD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
-                
-        let thisMovies = indexPath.section == 0 ? moviesNotSeen[indexPath.row] : moviesSeen[indexPath.row]
+                    
+        let thisMovies = indexPath.section == 0 ? moviesList.filter { $0.seen == false }[indexPath.row] : moviesList.filter { $0.seen == true }[indexPath.row]
+        
         cell.seenNotSeenDelegate = self
         
         cell.titleLbl.text = "\(thisMovies.title)"
