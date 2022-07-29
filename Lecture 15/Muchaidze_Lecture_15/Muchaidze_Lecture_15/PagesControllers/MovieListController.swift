@@ -18,12 +18,12 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource, testD
     func seenUnseen(cell: MoviesCell) {
         let movieTitle = cell.titleLbl.text
         
-        guard let movie = moviesList.first(where: {
+        guard var movie = moviesList.first(where: {
             $0.title == movieTitle
         }) else { return }
         
         movie.seen.toggle()
-        
+                
         mainTableView.reloadData()
     }
     
