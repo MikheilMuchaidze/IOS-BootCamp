@@ -11,8 +11,6 @@ class userListTable: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        userListTable.reloadData()
         userListTable.delegate = self
         userListTable.dataSource = self
     }

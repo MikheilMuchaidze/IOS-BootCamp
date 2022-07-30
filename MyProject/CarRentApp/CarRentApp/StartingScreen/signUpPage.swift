@@ -30,11 +30,22 @@ class signUpPage: UIViewController {
     var newUserDelegate: newUserToUserLists?
     
     @IBAction func registerUserBtn(_ sender: Any) {
-        newUserDelegate?.registerNewUser(registeredUserName: userNameRegisterTxt.text!,
-                                         registeredUserPass: userPasswordRegisterTxt.text!,
-                                         registeredRepeatPass: userPasswordRepeatTxt.text!,
-                                         registeredUserEmail: userEmailRegisterTxt.text!)
-        navigationController?.popViewController(animated: true)
+        checkForEmptyFields()
+        checkForPassSimilarity()
+        
+        if userNameRegisterTxt.text != "" &&
+            userPasswordRegisterTxt.text  != "" &&
+            userPasswordRepeatTxt.text  != "" &&
+            userEmailRegisterTxt.text  != "" &&
+            userPasswordRegisterTxt.text == userPasswordRepeatTxt.text {
+            
+            newUserDelegate?.registerNewUser(registeredUserName: userNameRegisterTxt.text!,
+                                             registeredUserPass: userPasswordRegisterTxt.text!,
+                                             registeredRepeatPass: userPasswordRepeatTxt.text!,
+                                             registeredUserEmail: userEmailRegisterTxt.text!)
+            navigationController?.popViewController(animated: true)
+        }
+
     }
     
     override func viewDidLoad() {
@@ -44,7 +55,41 @@ class signUpPage: UIViewController {
             elem?.setCorner(radius: 20)
             elem?.setBorder(width: 3, color: UIColor.gray)
         }
-
+        
+        userPasswordRegisterTxt.isSecureTextEntry = true
+        userPasswordRepeatTxt.isSecureTextEntry = true
     }
+    
+    
+    
+}
+
+extension signUpPage {
+    
+    func checkForEmptyFields() {
+        if userNameRegisterTxt.text == "" ||
+            userPasswordRegisterTxt.text  == "" ||
+            userPasswordRepeatTxt.text  == "" ||
+            userEmailRegisterTxt.text  == "" {
+            
+            let alertmassege = UIAlertController(title: "Field(s) empty.", message: "All fields must be completed.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "Ok.", style: UIAlertAction.Style.default, handler: nil)
+            alertmassege.addAction(okAction)
+            self.present(alertmassege, animated: true)
+        }
+    }
+    
+    func checkForPassSimilarity() {
+        if userPasswordRegisterTxt.text != userPasswordRepeatTxt.text {
+            
+            let alertmassege = UIAlertController(title: "Passwords not match.", message: "Passwrods must be a match! Try again.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+            alertmassege.addAction(okAction)
+            self.present(alertmassege, animated: true)
+        }
+    }
+    
+
+
 }
 
