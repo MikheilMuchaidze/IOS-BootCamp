@@ -14,6 +14,11 @@
 		24238BB4289051B100A2CECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24238BB2289051B100A2CECA /* LaunchScreen.storyboard */; };
 		24238BBD2894295000A2CECA /* StartingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24238BBC2894295000A2CECA /* StartingScreen.swift */; };
 		24238BBF2894304700A2CECA /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24238BBE2894304700A2CECA /* Media.xcassets */; };
+		24238BC1289435D800A2CECA /* SingInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24238BC0289435D800A2CECA /* SingInPage.swift */; };
+		24238BC32894597400A2CECA /* signUpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24238BC22894597400A2CECA /* signUpPage.swift */; };
+		24238BC72894783100A2CECA /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24238BC62894783100A2CECA /* Users.swift */; };
+		24FEA222289509F60059E5A4 /* userListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FEA221289509F60059E5A4 /* userListTable.swift */; };
+		24FEA22428951BF70059E5A4 /* adminTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FEA22328951BF70059E5A4 /* adminTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		24238BB5289051B100A2CECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24238BBC2894295000A2CECA /* StartingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingScreen.swift; sourceTree = "<group>"; };
 		24238BBE2894304700A2CECA /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		24238BC0289435D800A2CECA /* SingInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInPage.swift; sourceTree = "<group>"; };
+		24238BC22894597400A2CECA /* signUpPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpPage.swift; sourceTree = "<group>"; };
+		24238BC62894783100A2CECA /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		24FEA221289509F60059E5A4 /* userListTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userListTable.swift; sourceTree = "<group>"; };
+		24FEA22328951BF70059E5A4 /* adminTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adminTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				24238BBB289428D900A2CECA /* StartingScreen */,
+				24FEA220289509C00059E5A4 /* adminUsersList */,
 				24238BA7289051AF00A2CECA /* AppDelegate.swift */,
+				24238BC52894781700A2CECA /* Database */,
 				24238BA9289051AF00A2CECA /* SceneDelegate.swift */,
 				24238BAB289051AF00A2CECA /* ViewController.swift */,
 				24238BAD289051AF00A2CECA /* Main.storyboard */,
@@ -74,8 +86,27 @@
 			isa = PBXGroup;
 			children = (
 				24238BBC2894295000A2CECA /* StartingScreen.swift */,
+				24238BC0289435D800A2CECA /* SingInPage.swift */,
+				24238BC22894597400A2CECA /* signUpPage.swift */,
 			);
 			path = StartingScreen;
+			sourceTree = "<group>";
+		};
+		24238BC52894781700A2CECA /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				24238BC62894783100A2CECA /* Users.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		24FEA220289509C00059E5A4 /* adminUsersList */ = {
+			isa = PBXGroup;
+			children = (
+				24FEA221289509F60059E5A4 /* userListTable.swift */,
+				24FEA22328951BF70059E5A4 /* adminTableCell.swift */,
+			);
+			path = adminUsersList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +181,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				24238BAC289051AF00A2CECA /* ViewController.swift in Sources */,
+				24FEA222289509F60059E5A4 /* userListTable.swift in Sources */,
 				24238BA8289051AF00A2CECA /* AppDelegate.swift in Sources */,
+				24FEA22428951BF70059E5A4 /* adminTableCell.swift in Sources */,
+				24238BC1289435D800A2CECA /* SingInPage.swift in Sources */,
 				24238BAA289051AF00A2CECA /* SceneDelegate.swift in Sources */,
+				24238BC32894597400A2CECA /* signUpPage.swift in Sources */,
 				24238BBD2894295000A2CECA /* StartingScreen.swift in Sources */,
+				24238BC72894783100A2CECA /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
