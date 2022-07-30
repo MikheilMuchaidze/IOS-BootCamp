@@ -6,6 +6,10 @@ protocol newUserToUserLists {
 
 class signUpPage: UIViewController {
     
+    //MARK: show/hide password
+    var iconClick = false
+    let imageicon = UIImageView()
+    
     @IBAction func adminBtn(_ sender: Any) {
         let goToAdminPage = storyboard?.instantiateViewController(withIdentifier: "userListTable") as? userListTable
         self.navigationController?.pushViewController(goToAdminPage!, animated: true)
@@ -55,13 +59,12 @@ class signUpPage: UIViewController {
             elem?.setCorner(radius: 20)
             elem?.setBorder(width: 3, color: UIColor.gray)
         }
+
+
         
-        userPasswordRegisterTxt.isSecureTextEntry = true
-        userPasswordRepeatTxt.isSecureTextEntry = true
     }
     
-    
-    
+
 }
 
 extension signUpPage {
@@ -88,6 +91,8 @@ extension signUpPage {
             self.present(alertmassege, animated: true)
         }
     }
+    
+    
     
 
 
