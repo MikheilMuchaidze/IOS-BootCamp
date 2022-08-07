@@ -1,6 +1,9 @@
 import UIKit
 
 class SingInPage: UIViewController {
+    
+    @IBOutlet weak var incorrectUsernameLbl: UILabel!
+    @IBOutlet weak var incorrectPasswordLbl: UILabel!
         
     @IBOutlet weak var logoImage: UIImageView!
     
@@ -11,10 +14,31 @@ class SingInPage: UIViewController {
     @IBOutlet weak var passwordTxtField: UITextField!
     
     @IBAction func backBtn(_ sender: Any) {
+        usersList.removeAll()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func singInBtn(_ sender: Any) {
+        
+        usersList.forEach { user in
+            
+            if user.username != usernameTxtField.text {
+                incorrectUsernameLbl.alpha = 1
+            } else {
+                incorrectUsernameLbl.alpha = 0
+            }
+            
+            if user.password != passwordTxtField.text {
+                incorrectPasswordLbl.alpha = 1
+            } else {
+                incorrectPasswordLbl.alpha = 0
+            }
+            
+            if user.username == usernameTxtField.text && user.password == passwordTxtField.text {
+                let goToCarSelection = storyboard?.instantiateViewController(withIdentifier: "MainCarSelectorViewController") as? MainCarSelectorViewController
+                self.navigationController?.pushViewController(goToCarSelection!, animated: true)
+            }
+        }
         
     }
     
@@ -34,6 +58,9 @@ class SingInPage: UIViewController {
         }
         
         logoImage.backgroundColor = .clear
+        
+        incorrectUsernameLbl.alpha = 0
+        incorrectPasswordLbl.alpha = 0
     }
 }
 
@@ -58,11 +85,26 @@ extension SingInPage: newUserToUserLists {
                             password: registeredUserPass,
                             repeatedPassword: registeredRepeatPass,
                             email: registeredUserEmail)
-        usersList.append(newUser)
         
-        usersList.forEach({ elem in
-            print("\(elem.username) - \(elem.password) - \(elem.repeatedPassword) - \(elem.email)")
-        })
+        let usernamesList = usersList.map { elem in
+            elem.username
+        }
+        
+        if usernamesList.contains(where: { elem in
+            elem == registeredUserName
+        }) {
+            let alertmassege = UIAlertController(title: "User Exists", message: "User with this username already exists", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "Try again.", style: UIAlertAction.Style.default, handler: nil)
+            alertmassege.addAction(okAction)
+            self.present(alertmassege, animated: true)
+        } else {
+            usersList.append(newUser)
+            
+            usersList.forEach({ elem in
+                print("\(elem.username) - \(elem.password) - \(elem.repeatedPassword) - \(elem.email)")
+            })
+        }
+        
     }
 }
 

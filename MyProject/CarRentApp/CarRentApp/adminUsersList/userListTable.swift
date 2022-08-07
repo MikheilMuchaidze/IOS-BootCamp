@@ -2,8 +2,21 @@ import UIKit
 
 class userListTable: UIViewController {
     
-    @IBAction func backBtn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    @IBOutlet weak var backImageBtn: UIImageView!
+    
+    @IBAction func goToLoginPage(_ sender: Any) {
+        let goToLoginPage = storyboard?.instantiateViewController(withIdentifier: "SingInPage") as? SingInPage
+//        self.navigationController?.pushViewController(goToLoginPage!, animated: true)
+        
+        if let goToLoginPage = goToLoginPage {
+            self.navigationController?.pushViewController(goToLoginPage, animated: true)
+        }
+    }
+    
+    
+    @IBAction func removeAllUsersBtn(_ sender: Any) {
+        usersList.removeAll()
+        userListTable.reloadData()
     }
     
     @IBOutlet weak var userListTable: UITableView!
@@ -13,6 +26,9 @@ class userListTable: UIViewController {
         
         userListTable.delegate = self
         userListTable.dataSource = self
+        
+        backImageBtn.isUserInteractionEnabled = true
+        addTapToBackPic()
     }
 }
 
@@ -47,6 +63,15 @@ extension userListTable: UITableViewDelegate, UITableViewDataSource {
         }
     }
 
+}
 
+extension userListTable {
+    func addTapToBackPic() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGoBack))
+        backImageBtn.addGestureRecognizer(tapGesture)
+    }
     
+    @objc func tapGoBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
