@@ -5,6 +5,8 @@ protocol newUserToUserLists {
 }
 
 class signUpPage: UIViewController {
+
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     @IBOutlet weak var cyanCircleOutlet: UIImageView!
     @IBOutlet weak var purpleCircleOutlet: UIImageView!
@@ -55,26 +57,36 @@ class signUpPage: UIViewController {
     var newUserDelegate: newUserToUserLists?
     
     @IBAction func registerUserBtn(_ sender: Any) {
-        checkForEmptyFields()
-        checkForPassSimilarity()
-
-        if userNameRegisterTxt.text != "" &&
-            userPasswordRegisterTxt.text  != "" &&
-            userPasswordRepeatTxt.text  != "" &&
-            userEmailRegisterTxt.text  != "" &&
-            userPasswordRegisterTxt.text == userPasswordRepeatTxt.text {
+        indicator.isHidden = false
+        indicator.startAnimating()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+            self.indicator.isHidden = true
+            self.indicator.stopAnimating()
             
-            newUserDelegate?.registerNewUser(registeredUserName: userNameRegisterTxt.text!,
-                                             registeredUserPass: userPasswordRegisterTxt.text!,
-                                             registeredRepeatPass: userPasswordRepeatTxt.text!,
-                                             registeredUserEmail: userEmailRegisterTxt.text!)
-            navigationController?.popViewController(animated: true)
+            self.checkForEmptyFields()
+            self.checkForPassSimilarity()
+            
+            if self.userNameRegisterTxt.text != "" &&
+                self.userPasswordRegisterTxt.text  != "" &&
+                self.userPasswordRepeatTxt.text  != "" &&
+                self.userEmailRegisterTxt.text  != "" &&
+                self.userPasswordRegisterTxt.text == self.userPasswordRepeatTxt.text {
+                
+                self.newUserDelegate?.registerNewUser(registeredUserName: self.userNameRegisterTxt.text!,
+                                                 registeredUserPass: self.userPasswordRegisterTxt.text!,
+                                                 registeredRepeatPass: self.userPasswordRepeatTxt.text!,
+                                                 registeredUserEmail: self.userEmailRegisterTxt.text!)
+                self.navigationController?.popViewController(animated: true)
+            }
         }
 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        indicator.isHidden = true
         
         animateBackgroundCircles(image: cyanCircleOutlet)
         animateBackgroundCircles(image: purpleCircleOutlet)

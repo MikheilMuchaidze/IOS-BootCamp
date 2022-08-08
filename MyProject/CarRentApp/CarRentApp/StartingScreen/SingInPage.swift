@@ -2,6 +2,8 @@ import UIKit
 
 class SingInPage: UIViewController {
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var greenCircleOutlet: UIImageView!
     @IBOutlet weak var whiteCircleOutlet: UIImageView!
     
@@ -24,29 +26,44 @@ class SingInPage: UIViewController {
     }
     
     @IBAction func singInBtn(_ sender: Any) {
-    
-        //verification of users
-        usersList.forEach { user in
+        indicator.isHidden = false
+        indicator.startAnimating()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+            self.indicator.isHidden = true
+            self.indicator.stopAnimating()
             
-            //already registered username validation
-            if user.username != usernameTxtField.text {
-                incorrectUsernameLbl.alpha = 1
+            //username not found when list is empty
+            if usersList.isEmpty == true {
+                self.incorrectUsernameLbl.alpha = 1
             } else {
-                incorrectUsernameLbl.alpha = 0
+                self.incorrectUsernameLbl.alpha = 0
+            }
+        
+            //verification of users
+            usersList.forEach { user in
+                
+                //already registered username validation
+                if user.username != self.usernameTxtField.text {
+                    self.incorrectUsernameLbl.alpha = 1
+                } else {
+                    self.incorrectUsernameLbl.alpha = 0
+                }
+                
+                //already registered username's password validation
+                if user.password != self.passwordTxtField.text {
+                    self.incorrectPasswordLbl.alpha = 1
+                } else {
+                    self.incorrectPasswordLbl.alpha = 0
+                }
+                
+                //if username presented and password is correct proceed
+                if user.username == self.usernameTxtField.text && user.password == self.passwordTxtField.text {
+                    let goToCarSelection = self.storyboard?.instantiateViewController(withIdentifier: "MainCarSelectorViewController") as? MainCarSelectorViewController
+                    self.navigationController?.pushViewController(goToCarSelection!, animated: true)
+                }
             }
             
-            //already registered username's password validation
-            if user.password != passwordTxtField.text {
-                incorrectPasswordLbl.alpha = 1
-            } else {
-                incorrectPasswordLbl.alpha = 0
-            }
-            
-            //if username presented and password is correct proceed
-            if user.username == usernameTxtField.text && user.password == passwordTxtField.text {
-                let goToCarSelection = storyboard?.instantiateViewController(withIdentifier: "MainCarSelectorViewController") as? MainCarSelectorViewController
-                self.navigationController?.pushViewController(goToCarSelection!, animated: true)
-            }
         }
         
     }
@@ -59,8 +76,10 @@ class SingInPage: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        let textFieldsList = [usernameTxtField, passwordTxtField]
         
+        indicator.isHidden = true
+
+        let textFieldsList = [usernameTxtField, passwordTxtField]
         
         textFieldsList.forEach { elem in
             elem?.setCorner(radius: 20)

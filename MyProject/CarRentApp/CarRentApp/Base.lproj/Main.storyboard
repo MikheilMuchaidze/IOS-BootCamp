@@ -87,7 +87,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Th1-1D-wZf">
-                                <rect key="frame" x="20" y="806.33333333333337" width="388" height="55.666666666666629"/>
+                                <rect key="frame" x="20" y="807" width="388" height="55"/>
                                 <state key="normal" title="Button" image="arrow.right" catalog="system"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Home Page" cornerStyle="large">
                                     <fontDescription key="titleFontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
@@ -100,7 +100,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="homekit" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sMU-lh-3Qd">
-                                <rect key="frame" x="40" y="817.33333333333326" width="38.666666666666657" height="32.666666666666629"/>
+                                <rect key="frame" x="40" y="817.66666666666663" width="38.666666666666657" height="32.333333333333371"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UxH-bc-cwV" userLabel="greenCircle">
@@ -118,7 +118,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-K7-W5W">
-                                <rect key="frame" x="20" y="434.66666666666669" width="388" height="118.33333333333331"/>
+                                <rect key="frame" x="20" y="445.33333333333331" width="388" height="118.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Your username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5O-dF-r4h">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="27.333333333333332"/>
@@ -127,7 +127,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Input username" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-W3-lv6">
-                                        <rect key="frame" x="0.0" y="37.333333333333314" width="388" height="46.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="37.333333333333371" width="388" height="46.333333333333343"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,7 +143,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bIe-DJ-4hP">
-                                <rect key="frame" x="20" y="573" width="388" height="118.33333333333337"/>
+                                <rect key="frame" x="20" y="573.66666666666663" width="388" height="118.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Your password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1C-iQ-YiS">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="27.333333333333332"/>
@@ -157,10 +157,10 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong password!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnz-Te-7E0">
-                                        <rect key="frame" x="0.0" y="93.666666666666629" width="388" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="93.666666666666742" width="388" height="24.666666666666671"/>
                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="20"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
@@ -168,7 +168,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cYB-Fq-Izy">
-                                <rect key="frame" x="20" y="721.33333333333337" width="388" height="55"/>
+                                <rect key="frame" x="20" y="722" width="388" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qej-AN-3nm">
                                         <rect key="frame" x="0.0" y="0.0" width="220.66666666666666" height="55"/>
@@ -209,6 +209,9 @@
                                 </constraints>
                                 <imageReference key="image" image="car.2" catalog="system" symbolScale="default"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7Ei-9t-elb">
+                                <rect key="frame" x="120.33333333333331" y="697" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="abr-O0-ric"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -238,11 +241,12 @@
                             <constraint firstItem="cYB-Fq-Izy" firstAttribute="leading" secondItem="abr-O0-ric" secondAttribute="leading" constant="20" id="h7G-AJ-rFf"/>
                             <constraint firstItem="0Uh-W3-lv6" firstAttribute="height" secondItem="MG5-8z-gKs" secondAttribute="height" multiplier="0.05" id="p7X-rR-bU7"/>
                             <constraint firstItem="mSl-X9-zPS" firstAttribute="width" secondItem="MG5-8z-gKs" secondAttribute="width" id="sGf-SN-0CK"/>
+                            <constraint firstItem="cYB-Fq-Izy" firstAttribute="top" secondItem="7Ei-9t-elb" secondAttribute="bottom" constant="5" id="vBr-T6-zuQ"/>
                             <constraint firstItem="m5a-K7-W5W" firstAttribute="leading" secondItem="abr-O0-ric" secondAttribute="leading" constant="20" id="x80-sb-aoA"/>
                             <constraint firstItem="sMU-lh-3Qd" firstAttribute="height" secondItem="Th1-1D-wZf" secondAttribute="height" multiplier="0.6" id="xLc-sy-xzz"/>
                             <constraint firstAttribute="bottom" secondItem="MG5-8z-gKs" secondAttribute="bottom" id="xMg-JT-pgl"/>
-                            <constraint firstItem="bIe-DJ-4hP" firstAttribute="top" secondItem="m5a-K7-W5W" secondAttribute="bottom" constant="20" id="xOj-WM-aif"/>
-                            <constraint firstItem="m5a-K7-W5W" firstAttribute="top" relation="lessThanOrEqual" secondItem="M6u-fu-JaD" secondAttribute="bottom" constant="63" id="xgk-9q-SYH"/>
+                            <constraint firstItem="bIe-DJ-4hP" firstAttribute="top" secondItem="m5a-K7-W5W" secondAttribute="bottom" constant="10" id="xOj-WM-aif"/>
+                            <constraint firstItem="7Ei-9t-elb" firstAttribute="centerX" secondItem="qej-AN-3nm" secondAttribute="centerX" id="xpE-tQ-puu"/>
                             <constraint firstItem="abr-O0-ric" firstAttribute="trailing" secondItem="cYB-Fq-Izy" secondAttribute="trailing" constant="20" id="yGz-NM-sPU"/>
                             <constraint firstItem="Th1-1D-wZf" firstAttribute="top" secondItem="cYB-Fq-Izy" secondAttribute="bottom" constant="30" id="zjW-TP-dkm"/>
                         </constraints>
@@ -251,6 +255,7 @@
                         <outlet property="greenCircleOutlet" destination="UxH-bc-cwV" id="WIY-Cs-1M0"/>
                         <outlet property="incorrectPasswordLbl" destination="pnz-Te-7E0" id="NN8-Wu-YDt"/>
                         <outlet property="incorrectUsernameLbl" destination="Jvu-yQ-Z8a" id="T22-tc-ZEK"/>
+                        <outlet property="indicator" destination="7Ei-9t-elb" id="m1A-94-HFM"/>
                         <outlet property="logoImage" destination="M6u-fu-JaD" id="sqn-dB-p2Z"/>
                         <outlet property="passwordTxtField" destination="PGA-GI-B3m" id="xYT-DM-4Bf"/>
                         <outlet property="userPasswordLbl" destination="T1C-iQ-YiS" id="SxR-uD-wuG"/>
@@ -607,6 +612,9 @@
                                 <rect key="frame" x="19.999999999999996" y="74" width="42.666666666666657" height="37"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="thin"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="J4I-G2-BLU">
+                                <rect key="frame" x="120" y="702" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ufj-DG-uqt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -619,6 +627,7 @@
                             <constraint firstItem="wYO-l6-EbC" firstAttribute="leading" secondItem="Ufj-DG-uqt" secondAttribute="leading" constant="20" id="Am3-w1-6hz"/>
                             <constraint firstItem="fRk-Pw-J0l" firstAttribute="leading" secondItem="Ufj-DG-uqt" secondAttribute="leading" constant="20" id="DOF-Jk-Mc5"/>
                             <constraint firstItem="Ufj-DG-uqt" firstAttribute="trailing" secondItem="qcn-17-g4R" secondAttribute="trailing" constant="20" id="Fbb-UC-tqc"/>
+                            <constraint firstItem="J4I-G2-BLU" firstAttribute="top" secondItem="FiE-LK-BDB" secondAttribute="bottom" constant="10" id="HDH-Uv-Wsr"/>
                             <constraint firstItem="Ufj-DG-uqt" firstAttribute="trailing" secondItem="wYO-l6-EbC" secondAttribute="trailing" constant="20" id="KmI-ao-7sD"/>
                             <constraint firstItem="FiE-LK-BDB" firstAttribute="leading" secondItem="Ufj-DG-uqt" secondAttribute="leading" constant="20" id="LWV-v1-H94"/>
                             <constraint firstItem="Ufj-DG-uqt" firstAttribute="trailing" secondItem="fRk-Pw-J0l" secondAttribute="trailing" constant="20" id="MsL-Oy-XcQ"/>
@@ -637,6 +646,7 @@
                             <constraint firstItem="4jN-8a-UEz" firstAttribute="height" secondItem="ynK-am-gg7" secondAttribute="height" multiplier="0.05" id="c3m-Ty-wv8"/>
                             <constraint firstItem="v5p-CV-CVk" firstAttribute="centerY" secondItem="sla-qR-Rl3" secondAttribute="centerY" id="cmm-LH-lLa"/>
                             <constraint firstItem="wYO-l6-EbC" firstAttribute="top" secondItem="fRk-Pw-J0l" secondAttribute="bottom" constant="20" id="eTL-sq-FHB"/>
+                            <constraint firstItem="J4I-G2-BLU" firstAttribute="centerX" secondItem="oiX-P7-Uew" secondAttribute="centerX" id="eZI-VU-baB"/>
                             <constraint firstItem="fRk-Pw-J0l" firstAttribute="top" secondItem="PZq-M1-lLJ" secondAttribute="bottom" constant="20" id="fRx-6R-pNd"/>
                             <constraint firstItem="vPR-zy-Syu" firstAttribute="width" secondItem="ygv-Zq-vYx" secondAttribute="height" multiplier="1:1" id="hlw-O7-evO"/>
                             <constraint firstItem="sla-qR-Rl3" firstAttribute="height" secondItem="ynK-am-gg7" secondAttribute="height" multiplier="0.04" id="iNH-Ip-fEw"/>
@@ -655,6 +665,7 @@
                         <outlet property="backImageBtn" destination="sla-qR-Rl3" id="mWo-Uw-3gn"/>
                         <outlet property="cyanCircleOutlet" destination="ygv-Zq-vYx" id="4aI-Xz-bQY"/>
                         <outlet property="exitAdminLoginOutlet" destination="hcD-tX-u7H" id="xY1-Zm-q9w"/>
+                        <outlet property="indicator" destination="J4I-G2-BLU" id="X6B-pj-vaJ"/>
                         <outlet property="popupView" destination="FVp-FI-Rkt" id="uP1-KK-gfe"/>
                         <outlet property="purpleCircleOutlet" destination="vPR-zy-Syu" id="76z-Xq-uhZ"/>
                         <outlet property="userEmailRegisterTxt" destination="4jN-8a-UEz" id="147-Wt-rg3"/>
@@ -719,7 +730,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2783" y="890"/>
+            <point key="canvasLocation" x="2782.7102803738317" y="889.63282937365022"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CKQ-x6-YbC">
