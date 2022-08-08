@@ -6,13 +6,8 @@ class userListTable: UIViewController {
     
     @IBAction func goToLoginPage(_ sender: Any) {
         let goToLoginPage = storyboard?.instantiateViewController(withIdentifier: "SingInPage") as? SingInPage
-//        self.navigationController?.pushViewController(goToLoginPage!, animated: true)
-        
-        if let goToLoginPage = goToLoginPage {
-            self.navigationController?.pushViewController(goToLoginPage, animated: true)
-        }
+        self.navigationController?.pushViewController(goToLoginPage!, animated: true)
     }
-    
     
     @IBAction func removeAllUsersBtn(_ sender: Any) {
         usersList.removeAll()
@@ -27,6 +22,7 @@ class userListTable: UIViewController {
         userListTable.delegate = self
         userListTable.dataSource = self
         
+        //image for going back - setting it's user interaction - true and adding tap gesture to procced back
         backImageBtn.isUserInteractionEnabled = true
         addTapToBackPic()
     }
@@ -56,13 +52,13 @@ extension userListTable: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    //funcion for removing user from tableview and I think from userslist too??
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             usersList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
-
 }
 
 extension userListTable {
