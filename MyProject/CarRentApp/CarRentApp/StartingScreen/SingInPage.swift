@@ -29,6 +29,7 @@ class SingInPage: UIViewController {
         indicator.isHidden = false
         indicator.startAnimating()
         
+        //dispathing for 1 second, like loading from server but manually
         DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
             self.indicator.isHidden = true
             self.indicator.stopAnimating()

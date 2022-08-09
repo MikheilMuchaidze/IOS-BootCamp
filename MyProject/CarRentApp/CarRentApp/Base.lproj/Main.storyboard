@@ -613,7 +613,7 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="thin"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="J4I-G2-BLU">
-                                <rect key="frame" x="120" y="702" width="20" height="20"/>
+                                <rect key="frame" x="120.33333333333331" y="702" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ufj-DG-uqt"/>
