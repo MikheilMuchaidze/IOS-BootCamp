@@ -268,6 +268,21 @@
             </objects>
             <point key="canvasLocation" x="2782.7102803738317" y="115.98272138228943"/>
         </scene>
+        <!--Profile Details-->
+        <scene sceneID="dBD-mH-YYC">
+            <objects>
+                <viewController storyboardIdentifier="ProfileDetails" id="h9p-B6-bIu" customClass="ProfileDetails" customModule="CarRentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vwb-Yz-6vM">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="q3K-h8-h7f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQv-aM-vOd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3594" y="-609"/>
+        </scene>
         <!--Main Car Selector View Controller-->
         <scene sceneID="sFd-68-TWb">
             <objects>
@@ -282,22 +297,37 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carBaground" translatesAutoresizingMaskIntoConstraints="NO" id="IFP-Fg-WoU">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutIcon" translatesAutoresizingMaskIntoConstraints="NO" id="qIu-BB-uFm">
+                                <rect key="frame" x="19.999999999999996" y="74" width="42.666666666666657" height="46.333333333333343"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="yMW-md-dsi">
+                                <rect key="frame" x="365.33333333333331" y="74" width="42.666666666666686" height="46.333333333333343"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rwo-Rm-grO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="yMW-md-dsi" firstAttribute="top" secondItem="rwo-Rm-grO" secondAttribute="top" constant="30" id="4LM-o4-YjF"/>
                             <constraint firstAttribute="bottom" secondItem="IFP-Fg-WoU" secondAttribute="bottom" id="67x-ht-qJt"/>
                             <constraint firstItem="46f-uR-hWg" firstAttribute="leading" secondItem="rwo-Rm-grO" secondAttribute="leading" constant="20" id="Asn-MX-Uqo"/>
+                            <constraint firstItem="yMW-md-dsi" firstAttribute="width" secondItem="IFP-Fg-WoU" secondAttribute="width" multiplier="0.1" id="Ja6-OV-5DA"/>
+                            <constraint firstItem="qIu-BB-uFm" firstAttribute="leading" secondItem="rwo-Rm-grO" secondAttribute="leading" constant="20" id="Ljr-Ue-TEC"/>
                             <constraint firstItem="46f-uR-hWg" firstAttribute="top" secondItem="rwo-Rm-grO" secondAttribute="top" constant="30" id="Nw6-Xd-2wp"/>
+                            <constraint firstItem="qIu-BB-uFm" firstAttribute="top" secondItem="rwo-Rm-grO" secondAttribute="top" constant="30" id="PI1-TN-XWu"/>
                             <constraint firstItem="46f-uR-hWg" firstAttribute="width" secondItem="IFP-Fg-WoU" secondAttribute="width" multiplier="0.1" id="Vc1-kz-aUg"/>
                             <constraint firstItem="IFP-Fg-WoU" firstAttribute="leading" secondItem="rwo-Rm-grO" secondAttribute="leading" id="Yvn-XL-sJZ"/>
+                            <constraint firstItem="qIu-BB-uFm" firstAttribute="width" secondItem="IFP-Fg-WoU" secondAttribute="width" multiplier="0.1" id="Zhk-9o-dXw"/>
                             <constraint firstItem="IFP-Fg-WoU" firstAttribute="top" secondItem="vgs-is-tCG" secondAttribute="top" id="aOd-bz-GXq"/>
+                            <constraint firstItem="qIu-BB-uFm" firstAttribute="height" secondItem="IFP-Fg-WoU" secondAttribute="height" multiplier="0.05" id="aUm-tt-WW9"/>
                             <constraint firstItem="IFP-Fg-WoU" firstAttribute="trailing" secondItem="rwo-Rm-grO" secondAttribute="trailing" id="gt7-LC-ZZo"/>
+                            <constraint firstItem="rwo-Rm-grO" firstAttribute="trailing" secondItem="yMW-md-dsi" secondAttribute="trailing" constant="20" id="jU7-7R-Tkk"/>
                             <constraint firstItem="46f-uR-hWg" firstAttribute="height" secondItem="IFP-Fg-WoU" secondAttribute="height" multiplier="0.04" id="lse-mi-c5e"/>
+                            <constraint firstItem="yMW-md-dsi" firstAttribute="height" secondItem="IFP-Fg-WoU" secondAttribute="height" multiplier="0.05" id="nsF-oF-GEg"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backBtnImage" destination="46f-uR-hWg" id="cxb-Wo-srP"/>
+                        <outlet property="logoutBtnImage" destination="qIu-BB-uFm" id="mjD-iQ-iAN"/>
+                        <outlet property="profileBtnImage" destination="yMW-md-dsi" id="FSU-YI-jKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5g-ea-5KC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -757,6 +787,8 @@
         <image name="carBaground" width="338" height="732"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="logoutIcon" width="256" height="256"/>
+        <image name="profileIcon" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

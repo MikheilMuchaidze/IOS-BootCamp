@@ -17,6 +17,7 @@
 		24238BC1289435D800A2CECA /* SingInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24238BC0289435D800A2CECA /* SingInPage.swift */; };
 		24238BC32894597400A2CECA /* signUpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24238BC22894597400A2CECA /* signUpPage.swift */; };
 		24238BC72894783100A2CECA /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24238BC62894783100A2CECA /* Users.swift */; };
+		244DBE0628A2C75700BD015A /* ProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DBE0528A2C75700BD015A /* ProfileDetails.swift */; };
 		24887C9F289A9C7E00983FBE /* MainCarSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24887C9E289A9C7E00983FBE /* MainCarSelectorViewController.swift */; };
 		24FEA222289509F60059E5A4 /* userListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FEA221289509F60059E5A4 /* userListTable.swift */; };
 		24FEA22428951BF70059E5A4 /* adminTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FEA22328951BF70059E5A4 /* adminTableCell.swift */; };
@@ -35,6 +36,7 @@
 		24238BC0289435D800A2CECA /* SingInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInPage.swift; sourceTree = "<group>"; };
 		24238BC22894597400A2CECA /* signUpPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpPage.swift; sourceTree = "<group>"; };
 		24238BC62894783100A2CECA /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		244DBE0528A2C75700BD015A /* ProfileDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetails.swift; sourceTree = "<group>"; };
 		24887C9E289A9C7E00983FBE /* MainCarSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCarSelectorViewController.swift; sourceTree = "<group>"; };
 		24FEA221289509F60059E5A4 /* userListTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userListTable.swift; sourceTree = "<group>"; };
 		24FEA22328951BF70059E5A4 /* adminTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adminTableCell.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		24238BA6289051AF00A2CECA /* CarRentApp */ = {
 			isa = PBXGroup;
 			children = (
+				244DBE0428A2C72700BD015A /* ProfileDetails */,
 				24887C9D289A9C5E00983FBE /* MainCarSelector */,
 				24238BBB289428D900A2CECA /* StartingScreen */,
 				24FEA220289509C00059E5A4 /* adminUsersList */,
@@ -101,6 +104,14 @@
 				24238BC62894783100A2CECA /* Users.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		244DBE0428A2C72700BD015A /* ProfileDetails */ = {
+			isa = PBXGroup;
+			children = (
+				244DBE0528A2C75700BD015A /* ProfileDetails.swift */,
+			);
+			path = ProfileDetails;
 			sourceTree = "<group>";
 		};
 		24887C9D289A9C5E00983FBE /* MainCarSelector */ = {
@@ -199,6 +210,7 @@
 				24887C9F289A9C7E00983FBE /* MainCarSelectorViewController.swift in Sources */,
 				24238BAA289051AF00A2CECA /* SceneDelegate.swift in Sources */,
 				24238BC32894597400A2CECA /* signUpPage.swift in Sources */,
+				244DBE0628A2C75700BD015A /* ProfileDetails.swift in Sources */,
 				24238BBD2894295000A2CECA /* StartingScreen.swift in Sources */,
 				24238BC72894783100A2CECA /* Users.swift in Sources */,
 			);
