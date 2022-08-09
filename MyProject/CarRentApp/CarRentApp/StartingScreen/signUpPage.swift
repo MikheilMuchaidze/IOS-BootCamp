@@ -84,13 +84,27 @@ class signUpPage: UIViewController {
 
     }
     
+    //hide circles after view is going to go to another one
+    override func viewWillDisappear(_ animated: Bool) {
+        cyanCircleOutlet.isHidden = true
+        purpleCircleOutlet.isHidden = true
+        
+        cyanCircleOutlet.isHidden = true
+        purpleCircleOutlet.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        animateBackgroundCircles(image: purpleCircleOutlet, time: 0.02)
+        animateBackgroundCircles(image: cyanCircleOutlet, time: 0.1)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        indicator.isHidden = true
+        cyanCircleOutlet.isHidden = true
+        purpleCircleOutlet.isHidden = true
         
-        animateBackgroundCircles(image: cyanCircleOutlet)
-        animateBackgroundCircles(image: purpleCircleOutlet)
+        indicator.isHidden = true
         
         //grouping all textfields
         let textFieldsList = [userNameRegisterTxt, userPasswordRegisterTxt, userPasswordRepeatTxt, userEmailRegisterTxt]
@@ -152,13 +166,19 @@ extension signUpPage {
     }
     
     //animation to make appearing of backgound circles after view is loaded
-    func animateBackgroundCircles(image: UIImageView) {
+    func animateBackgroundCircles(image: UIImageView, time: Double) {
         image.isHidden = true
-        UIView.animate(withDuration: 2, delay: 5, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
-            image.alpha = 1
-        }, completion: { finished in
-            image.isHidden = false
-        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + time ) {
+            
+            //sets the view's scaling to be 120%
+            image.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            
+            //animate the affect
+            UIView.animate(withDuration: 0.3, animations: {
+                image.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                image.isHidden = false
+            })
+        }
     }
     
     //animate in a specific view

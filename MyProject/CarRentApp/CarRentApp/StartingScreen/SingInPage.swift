@@ -74,9 +74,26 @@ class SingInPage: UIViewController {
         self.navigationController?.pushViewController(goToSignUpPage!, animated: true)
         goToSignUpPage?.newUserDelegate = self
     }
+    
+    //delete data from textfields after moving to other view
+    override func viewWillAppear(_ animated: Bool) {
+        whiteCircleOutlet.isHidden = true
+        greenCircleOutlet.isHidden = true
+        
+        usernameTxtField.text?.removeAll()
+        passwordTxtField.text?.removeAll()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        animateBackgroundCircles(image: whiteCircleOutlet, time: 0.02)
+        animateBackgroundCircles(image: greenCircleOutlet, time: 0.1)
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        whiteCircleOutlet.isHidden = true
+        greenCircleOutlet.isHidden = true
         
         indicator.isHidden = true
 
@@ -136,6 +153,24 @@ extension SingInPage: newUserToUserLists {
             
             usersList.forEach({ elem in
                 print("\(elem.username) - \(elem.password) - \(elem.repeatedPassword) - \(elem.email)")
+            })
+        }
+    }
+}
+
+extension SingInPage {
+    //animation to make appearing of backgound circles after view is loaded
+    func animateBackgroundCircles(image: UIImageView, time: Double) {
+        image.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + time ) {
+            
+            //sets the view's scaling to be 120%
+            image.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            
+            //animate the affect
+            UIView.animate(withDuration: 0.3, animations: {
+                image.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                image.isHidden = false
             })
         }
     }
