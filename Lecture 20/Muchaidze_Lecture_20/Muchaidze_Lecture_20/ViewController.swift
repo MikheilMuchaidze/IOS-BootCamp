@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let numbers = 1...10_000
+    //satestot 500 davayene magram ideashi imushavebs magal ricxvzec
+    let numbers = 1...5_000
     
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     
@@ -21,29 +22,38 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         indicator.isHidden = true
         
-        
     }
 
     @IBAction func calculatePrimeNumbersBtn(_ sender: Any) {
         indicator.isHidden = false
         indicator.startAnimating()
-        
-        for i in numbers {
-            let testList = primeNums(limit: i)
+        calculatePrimeNumbers.isEnabled = false
+//        calculatePrimeNumbers.setTitle("please wait!", for: .normal)
+
+        DispatchQueue.global(qos: .background).async {
             
-            var primeList = [Int]()
-            
-            if testList.count == 2 {
-                primeList.append(i)
+            for i in self.numbers {
+                let testList = self.primeNums(limit: i)
+                
+                var primeList = [Int]()
+                
+                if testList.count == 2 {
+                    primeList.append(i)
+                }
+                
+                primeList.forEach { elem in
+                    print(elem, terminator: " ")
+                }
             }
             
-            primeList.forEach { elem in
-                print(elem, terminator: " ")
+            DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
+                self.calculatePrimeNumbers.isEnabled = true
             }
+    
         }
-        
-        indicator.stopAnimating()
-        indicator.isHidden = true
+    
     }
     
     func primeNums(limit: Int) -> [Int] {

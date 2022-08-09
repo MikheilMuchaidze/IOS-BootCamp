@@ -29,10 +29,10 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="WLq-qN-tar">
-                                <rect key="frame" x="211" y="383" width="20" height="20"/>
+                                <rect key="frame" x="204" y="370" width="20" height="20"/>
                             </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="eXa-Mo-b5b">
-                                <rect key="frame" x="0.0" y="94" width="442" height="216"/>
+                                <rect key="frame" x="0.0" y="94" width="428" height="216"/>
                                 <locale key="locale" localeIdentifier="ka_GE"/>
                             </datePicker>
                         </subviews>
