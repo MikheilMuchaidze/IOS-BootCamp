@@ -15,13 +15,49 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmj-SU-pCS">
+                                <rect key="frame" x="114" y="330" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BY8-bf-SNs"/>
+                                    <constraint firstAttribute="width" constant="200" id="l6v-xQ-Cpv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Calculate Rime Numbers!"/>
+                                <connections>
+                                    <action selector="calculatePrimeNumbersBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jyf-Q1-cq5"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="WLq-qN-tar">
+                                <rect key="frame" x="211" y="383" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="eXa-Mo-b5b">
+                                <rect key="frame" x="0.0" y="94" width="442" height="216"/>
+                                <locale key="locale" localeIdentifier="ka_GE"/>
+                            </datePicker>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eXa-Mo-b5b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="GIw-uF-iOH"/>
+                            <constraint firstItem="xmj-SU-pCS" firstAttribute="top" secondItem="eXa-Mo-b5b" secondAttribute="bottom" constant="20" id="NzC-yK-pWg"/>
+                            <constraint firstItem="xmj-SU-pCS" firstAttribute="centerX" secondItem="eXa-Mo-b5b" secondAttribute="centerX" id="ToX-vR-lK6"/>
+                            <constraint firstItem="WLq-qN-tar" firstAttribute="centerX" secondItem="xmj-SU-pCS" secondAttribute="centerX" id="bMg-kt-iLk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eXa-Mo-b5b" secondAttribute="trailing" id="cpm-QR-HIG"/>
+                            <constraint firstItem="eXa-Mo-b5b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kpX-kx-zaf"/>
+                            <constraint firstItem="eXa-Mo-b5b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qFW-vV-Wbr"/>
+                            <constraint firstItem="WLq-qN-tar" firstAttribute="top" secondItem="xmj-SU-pCS" secondAttribute="bottom" constant="10" id="tLm-84-Ged"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculatePrimeNumbers" destination="xmj-SU-pCS" id="8tC-SL-cHQ"/>
+                        <outlet property="datePickerOutlet" destination="eXa-Mo-b5b" id="WiC-lN-19C"/>
+                        <outlet property="indicator" destination="WLq-qN-tar" id="eE8-7c-mNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="117"/>
+            <point key="canvasLocation" x="131.77570093457942" y="116.63066954643629"/>
         </scene>
     </scenes>
     <resources>
