@@ -19,9 +19,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fki-ht-fMn">
                                 <rect key="frame" x="0.0" y="144" width="428" height="648"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="Bes-zz-b20">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CountryTableViewCell" id="EBk-mX-jSG" customClass="CountryTableViewCell" customModule="Muchaidze_Lecture_21" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="50"/>
+                                        <rect key="frame" x="0.0" y="95.666666030883789" width="428" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EBk-mX-jSG" id="ZwN-Bw-epA">
                                             <rect key="frame" x="0.0" y="0.0" width="428" height="50"/>
@@ -46,25 +51,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Bes-zz-b20">
-                                <rect key="frame" x="0.0" y="64" width="428" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Bes-zz-b20" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EJ0-l9-Hsr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fki-ht-fMn" secondAttribute="trailing" id="Gcg-ay-Y7A"/>
-                            <constraint firstItem="Bes-zz-b20" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IRM-1q-Mhv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fki-ht-fMn" secondAttribute="bottom" constant="100" id="KZm-zB-LJQ"/>
                             <constraint firstItem="fki-ht-fMn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p2d-J9-6Cn"/>
                             <constraint firstItem="fki-ht-fMn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="vwV-wv-Fmt"/>
-                            <constraint firstItem="Bes-zz-b20" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="w5k-HY-jy1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lFf-zo-rHy"/>
                     <connections>
+                        <outlet property="searchBar" destination="Bes-zz-b20" id="rnl-GM-yfu"/>
                         <outlet property="tableVIew" destination="fki-ht-fMn" id="NTi-Nk-HK9"/>
                     </connections>
                 </viewController>
@@ -88,19 +87,60 @@
                                     <action selector="backToListBtn:" destination="Vxp-RO-ZWU" eventType="touchUpInside" id="YkJ-D3-fXT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CountryCapital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Eh-u8-cg8">
+                                <rect key="frame" x="20" y="200" width="208" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CountryArea" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mha-pE-xSj">
+                                <rect key="frame" x="20" y="244" width="208" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CountryName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezt-OD-ITn">
+                                <rect key="frame" x="114.66666666666669" y="115" width="199" height="35"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mk-2U-hoM">
+                                <rect key="frame" x="20" y="329" width="388" height="463"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nRs-2E-pDO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7mk-2U-hoM" firstAttribute="leading" secondItem="nRs-2E-pDO" secondAttribute="leading" constant="20" id="147-ff-ROO"/>
                             <constraint firstItem="Kho-RW-5O4" firstAttribute="leading" secondItem="nRs-2E-pDO" secondAttribute="leading" constant="20" id="9wD-aN-Xzv"/>
+                            <constraint firstItem="nRs-2E-pDO" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1Eh-u8-cg8" secondAttribute="trailing" constant="200" id="AIU-mG-3iM"/>
+                            <constraint firstItem="1Eh-u8-cg8" firstAttribute="leading" secondItem="nRs-2E-pDO" secondAttribute="leading" constant="20" id="ApV-rB-a8p"/>
                             <constraint firstItem="nRs-2E-pDO" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Kho-RW-5O4" secondAttribute="trailing" constant="330" id="AtS-kY-TPk"/>
+                            <constraint firstItem="nRs-2E-pDO" firstAttribute="trailing" secondItem="7mk-2U-hoM" secondAttribute="trailing" constant="20" id="G3f-ma-yWV"/>
+                            <constraint firstItem="Mha-pE-xSj" firstAttribute="top" secondItem="1Eh-u8-cg8" secondAttribute="bottom" constant="20" id="NHJ-NZ-ghF"/>
+                            <constraint firstItem="nRs-2E-pDO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ezt-OD-ITn" secondAttribute="trailing" constant="20" id="Q98-fp-eR0"/>
+                            <constraint firstItem="ezt-OD-ITn" firstAttribute="top" secondItem="Kho-RW-5O4" secondAttribute="bottom" constant="20" id="XDp-hB-eHF"/>
                             <constraint firstItem="Kho-RW-5O4" firstAttribute="top" secondItem="nRs-2E-pDO" secondAttribute="top" constant="20" id="dYC-C4-pa6"/>
+                            <constraint firstItem="ezt-OD-ITn" firstAttribute="centerX" secondItem="nRs-2E-pDO" secondAttribute="centerX" id="gQj-vg-0uB"/>
+                            <constraint firstItem="Mha-pE-xSj" firstAttribute="leading" secondItem="nRs-2E-pDO" secondAttribute="leading" constant="20" id="hbN-F4-bvo"/>
+                            <constraint firstItem="nRs-2E-pDO" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Mha-pE-xSj" secondAttribute="trailing" constant="200" id="idf-VJ-TdU"/>
+                            <constraint firstItem="7mk-2U-hoM" firstAttribute="height" secondItem="e8m-jM-3Oc" secondAttribute="height" multiplier="0.5" id="nx2-y9-k8z"/>
+                            <constraint firstItem="nRs-2E-pDO" firstAttribute="bottom" secondItem="7mk-2U-hoM" secondAttribute="bottom" constant="100" id="p8h-Os-lu5"/>
+                            <constraint firstItem="1Eh-u8-cg8" firstAttribute="top" secondItem="ezt-OD-ITn" secondAttribute="bottom" constant="50" id="tUE-UB-aaN"/>
+                            <constraint firstItem="ezt-OD-ITn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nRs-2E-pDO" secondAttribute="leading" constant="20" id="xV3-uQ-apa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CountryAreaLbl" destination="Mha-pE-xSj" id="n0l-Xe-lGg"/>
+                        <outlet property="CountryCapitalLbl" destination="1Eh-u8-cg8" id="ZAR-JS-IkU"/>
+                        <outlet property="CountryImage" destination="7mk-2U-hoM" id="TOJ-yZ-8G0"/>
+                        <outlet property="CountryNameLbl" destination="ezt-OD-ITn" id="VCP-w2-Ow4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPW-C5-wKB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="113"/>
+            <point key="canvasLocation" x="1533.6448598130839" y="112.74298056155509"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Nd-gA-72Y">
