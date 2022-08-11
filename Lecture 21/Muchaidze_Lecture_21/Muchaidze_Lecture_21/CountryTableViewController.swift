@@ -7,8 +7,6 @@ class CountryTableViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    public var countriesList = [Counrtry]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +57,7 @@ extension CountryTableViewController {
             let decoder = JSONDecoder()
             let object = try! decoder.decode([Counrtry].self, from: data!)
             DispatchQueue.main.async {
-                self.countriesList = object
+                countriesList = object
                 self.tableVIew.reloadData()
             }
             
@@ -69,13 +67,3 @@ extension CountryTableViewController {
     
 }
 
-extension CountryTableViewController {
-    struct Counrtry: Decodable {
-        let name: String?
-        let capital: String?
-//        let area: Int?
-        let flag: String?
-    }
-    
-    
-}
