@@ -2,7 +2,7 @@ import UIKit
 
 class CountryDetailsViewController: UIViewController {
     
-    var country: Counrtry!
+    var country: Country!
     
     @IBOutlet weak var CountryNameLbl: UILabel!
     @IBOutlet weak var CountryCapitalLbl: UILabel!

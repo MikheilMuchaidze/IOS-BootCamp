@@ -13,6 +13,8 @@ class CountryTableViewController: UIViewController {
         tableVIew.delegate = self
         tableVIew.dataSource = self
         
+        searchBar.delegate = self
+        
         getCountries()
     
     }
@@ -21,22 +23,29 @@ class CountryTableViewController: UIViewController {
 
 extension CountryTableViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        filteredCountriesList.isEmpty ? countriesList.count : filteredCountriesList.count
+//        countriesList.count
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let goToDetails = storyboard?.instantiateViewController(withIdentifier: "CountryDetailsViewController") as! CountryDetailsViewController
-        let thisCountry = countriesList[indexPath.row]
+        
+        let thisCountry = filteredCountriesList.isEmpty ? countriesList[indexPath.row] : filteredCountriesList[indexPath.row]
+//        let thisCountry = countriesList[indexPath.row]
+        
         goToDetails.country = thisCountry
         self.navigationController?.pushViewController(goToDetails, animated: true)
     }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        countriesList.count
-    }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell", for: indexPath) as? CountryTableViewCell
-        let currentCountry = countriesList[indexPath.row]
+        
+        let currentCountry = filteredCountriesList.isEmpty ? countriesList[indexPath.row] : filteredCountriesList[indexPath.row]
+//        let currentCountry = countriesList[indexPath.row]
+        
         cell?.countryName.text = currentCountry.name ?? "No value for countries name"
         
         return cell!
@@ -55,7 +64,7 @@ extension CountryTableViewController {
         urlSession.dataTask(with: URLRequest(url: url)) { data, response, error in
             let data = data
             let decoder = JSONDecoder()
-            let object = try! decoder.decode([Counrtry].self, from: data!)
+            let object = try! decoder.decode([Country].self, from: data!)
             DispatchQueue.main.async {
                 countriesList = object
                 self.tableVIew.reloadData()
@@ -64,6 +73,25 @@ extension CountryTableViewController {
         }.resume()
         
     }
+    
+}
+
+extension CountryTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredCountriesList.removeAll()
+        
+        if searchText == ""{
+            filteredCountriesList = countriesList
+        } else {
+            for item in countriesList {
+                if item.name.lowercased().contains(searchText.lowercased()) {
+                    filteredCountriesList.append(item)
+                }
+            }
+        }
+        self.tableVIew.reloadData()
+    }
+    
     
 }
 

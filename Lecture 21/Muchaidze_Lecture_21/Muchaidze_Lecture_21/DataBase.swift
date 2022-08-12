@@ -1,7 +1,7 @@
 import Foundation
 
-public struct Counrtry: Decodable {
-    let name: String?
+public struct Country: Decodable {
+    let name: String
     let capital: String?
     let population: Int?
     let flag: String?
@@ -10,5 +10,6 @@ public struct Counrtry: Decodable {
 
 
 
-public var countriesList = [Counrtry]()
+public var countriesList = [Country]()
+public var filteredCountriesList = [Country]()
 
