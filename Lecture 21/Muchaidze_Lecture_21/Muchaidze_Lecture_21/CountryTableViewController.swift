@@ -22,9 +22,9 @@ class CountryTableViewController: UIViewController {
 extension CountryTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let goToDetails = storyboard?.instantiateViewController(withIdentifier: "CountryDetailsViewController") as! CountryDetailsViewController
-        
+        let thisCountry = countriesList[indexPath.row]
+        goToDetails.country = thisCountry
         self.navigationController?.pushViewController(goToDetails, animated: true)
     }
     
