@@ -46,7 +46,7 @@ extension CountryTableViewController: UITableViewDelegate, UITableViewDataSource
         let currentCountry = filteredCountriesList.isEmpty ? countriesList[indexPath.row] : filteredCountriesList[indexPath.row]
 //        let currentCountry = countriesList[indexPath.row]
         
-        cell?.countryName.text = currentCountry.name ?? "No value for countries name"
+        cell?.countryName.text = currentCountry.name
         
         return cell!
     }
@@ -76,6 +76,8 @@ extension CountryTableViewController {
     
 }
 
+
+//movidzie informacia chemi dawerili ar aris !
 extension CountryTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredCountriesList.removeAll()
