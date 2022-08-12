@@ -13,15 +13,17 @@ class CountryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .systemGray
+        CountryImage.contentMode = .scaleToFill
+        CountryImage.layer.cornerRadius = 10
+        
         CountryNameLbl.text = country.name
         CountryCapitalLbl.text = country.capital
         if let population = country.population {
             CountryPopulation.text = "\(population)"
         }
-        if let url = country.flag {
-            CountryImage.load(url: URL(string: url)!)
-        }
-
+        
+        CountryImage.load(url: country.flags.png)
         
     }
 
