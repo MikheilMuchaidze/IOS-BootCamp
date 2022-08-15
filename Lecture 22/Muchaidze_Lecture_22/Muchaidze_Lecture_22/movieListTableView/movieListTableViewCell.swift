@@ -1,7 +1,9 @@
 import UIKit
 
 class movieListTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var movieNameLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 

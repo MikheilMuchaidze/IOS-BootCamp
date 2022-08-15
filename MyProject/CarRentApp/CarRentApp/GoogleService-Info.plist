@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>682420663844-738t30ved80a29f5gbhfd5dp1rjipasu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.682420663844-738t30ved80a29f5gbhfd5dp1rjipasu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBydkaHWq0E2n5zfpuJbop7M6LE30xsbSs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>682420663844</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ge-Muchaidze-Lecture-18.CarRentApp</string>
+	<key>PROJECT_ID</key>
+	<string>carrentprojectios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>carrentprojectios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:682420663844:ios:1b6e887623372e9f0ecab1</string>
+</dict>
+</plist>
