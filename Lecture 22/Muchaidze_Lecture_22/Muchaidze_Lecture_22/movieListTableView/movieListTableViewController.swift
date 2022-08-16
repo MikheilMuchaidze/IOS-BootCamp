@@ -39,6 +39,14 @@ extension movieListTableViewController: UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let goToDetails = storyboard?.instantiateViewController(withIdentifier: "MovieDetailsViewController") as! MovieDetailsViewController
+        let thisMovie = movies[indexPath.row]
+        goToDetails.movie = thisMovie
+        self.navigationController?.pushViewController(goToDetails, animated: true)
+    }
+    
+    
     
     
 }
