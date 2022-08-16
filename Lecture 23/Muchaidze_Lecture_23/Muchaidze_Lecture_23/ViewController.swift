@@ -1,16 +1,26 @@
 import UIKit
 
+struct API_DATA {
+    static let API_KEY = "c78b72820646a4860d6b67948bccc37f"
+    static let topRatedMovies = "https://api.themoviedb.org/3/tv/top_rated?api_key=<<api_key>>&language=en-US&page=1"
+}
+
 class ViewController: UIViewController {
     
-    let API_KEY = "c78b72820646a4860d6b67948bccc37f"
-    let topRatedMovies = "https://developers.themoviedb.org/3/tv/get-top-rated-tv"
-    
-    
-    
+    let networkService = NetworkCall()
+    var movies = [MovieResponse.Movie]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        networkService.getDataFromAPI(fromUrlString: API_DATA.topRatedMovies) { (movie: MovieResponse) in
+            self.movies = movie.results
+        }
+        
+        movies.forEach { elem in
+            print(elem.name)
+        }
+        
     }
 
 

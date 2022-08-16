@@ -14,6 +14,7 @@
 		2481C52628ABE61C000DAC49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2481C52528ABE61C000DAC49 /* Assets.xcassets */; };
 		2481C52928ABE61C000DAC49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2481C52728ABE61C000DAC49 /* LaunchScreen.storyboard */; };
 		2481C53228ABE6C6000DAC49 /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2481C53128ABE6C6000DAC49 /* NetworkCall.swift */; };
+		2481C53528ABEF7B000DAC49 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2481C53428ABEF7B000DAC49 /* MovieResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2481C52828ABE61C000DAC49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2481C52A28ABE61C000DAC49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2481C53128ABE6C6000DAC49 /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
+		2481C53428ABEF7B000DAC49 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		2481C51B28ABE61A000DAC49 /* Muchaidze_Lecture_23 */ = {
 			isa = PBXGroup;
 			children = (
+				2481C53328ABEF54000DAC49 /* DataBase */,
 				2481C53028ABE6A0000DAC49 /* NetworkCall */,
 				2481C51C28ABE61A000DAC49 /* AppDelegate.swift */,
 				2481C51E28ABE61A000DAC49 /* SceneDelegate.swift */,
@@ -76,6 +79,14 @@
 				2481C53128ABE6C6000DAC49 /* NetworkCall.swift */,
 			);
 			path = NetworkCall;
+			sourceTree = "<group>";
+		};
+		2481C53328ABEF54000DAC49 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				2481C53428ABEF7B000DAC49 /* MovieResponse.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 				2481C52128ABE61A000DAC49 /* ViewController.swift in Sources */,
 				2481C51D28ABE61A000DAC49 /* AppDelegate.swift in Sources */,
 				2481C53228ABE6C6000DAC49 /* NetworkCall.swift in Sources */,
+				2481C53528ABEF7B000DAC49 /* MovieResponse.swift in Sources */,
 				2481C51F28ABE61A000DAC49 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
