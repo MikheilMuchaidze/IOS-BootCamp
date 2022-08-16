@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         networkService.getDataFromAPI(fromUrlString: API_DATA.link) { (movie: MovieResponse) in
             self.movies = movie.results
             self.movies.forEach { elem in
-                print(elem.name)
+                print("Show name: \(elem.name), Show ID: \(elem.id)")
             }
         }
         
