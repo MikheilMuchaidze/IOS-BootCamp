@@ -7,7 +7,7 @@ class NetworkCall {
         var urlComponents = URLComponents(string: UrlString)
         
         urlComponents?.queryItems = [
-            URLQueryItem(name: "api_key", value: API_DATA.API_KEY),
+            URLQueryItem(name: "api_key", value: "c78b72820646a4860d6b67948bccc37f"),
 //            URLQueryItem(name: "language", value: "en-US"),
 //            URLQueryItem(name: "page", value: "1")
         ]
@@ -46,5 +46,9 @@ class NetworkCall {
         
         task.resume()
     }
+    
+    
+    
+    
     
 }
