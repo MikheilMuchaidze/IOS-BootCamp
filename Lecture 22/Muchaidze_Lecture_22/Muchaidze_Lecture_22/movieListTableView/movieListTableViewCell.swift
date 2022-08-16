@@ -3,6 +3,7 @@ import UIKit
 class movieListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var movieNameLbl: UILabel!
+    @IBOutlet weak var movieVoteAvarageLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

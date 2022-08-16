@@ -1,9 +1,10 @@
-import Foundation
+import UIKit
 
-public struct MovieResponse: Decodable {
+struct MovieResponse: Codable {
     
-    public struct Movie: Decodable {
+    struct Movie: Codable {
         let name: String
+        let id: Int
         let vote_average: Double
         let vote_count: Int
     }
