@@ -1,17 +1,8 @@
-import UIKit
+//
+//  Extansions.swift
+//  Muchaidze_Lecture_22
+//
+//  Created by Misha Muchaidze on 20220813...
+//
 
-extension UIImageView {
-    
-    //Funciont for showing image from specific URL
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}
+import Foundation

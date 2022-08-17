@@ -20,6 +20,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carBaground" translatesAutoresizingMaskIntoConstraints="NO" id="2Hx-XJ-F0h">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DON'T SIT AT HOME. GO FOR A RIDE!" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bQ-R5-OWa">
+                                <rect key="frame" x="20" y="44" width="388" height="742.66666666666663"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="100"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hq5-yT-XsD">
                                 <rect key="frame" x="20" y="806.66666666666663" width="388" height="55.333333333333371"/>
                                 <constraints>
@@ -39,12 +45,6 @@
                                 <rect key="frame" x="349.33333333333331" y="820.66666666666663" width="38.666666666666686" height="27.666666666666629"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DON'T SIT AT HOME. GO FOR A RIDE!" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bQ-R5-OWa">
-                                <rect key="frame" x="20" y="44" width="388" height="742.66666666666663"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="100"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="569"/>
+            <point key="canvasLocation" x="1952.1739130434785" y="116.51785714285714"/>
         </scene>
         <!--Sing In Page-->
         <scene sceneID="xeZ-kP-SDh">
@@ -120,13 +120,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-K7-W5W">
                                 <rect key="frame" x="20" y="445.33333333333331" width="388" height="118.33333333333331"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Your email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5O-dF-r4h">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Your username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5O-dF-r4h">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="27.333333333333332"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Input Email" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-W3-lv6">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Input username" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-W3-lv6">
                                         <rect key="frame" x="0.0" y="37.333333333333371" width="388" height="46.333333333333343"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,7 +134,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email not found!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvu-yQ-Z8a">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username not found!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvu-yQ-Z8a">
                                         <rect key="frame" x="0.0" y="93.666666666666686" width="388" height="24.666666666666671"/>
                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="20"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -254,13 +254,13 @@
                     <connections>
                         <outlet property="greenCircleOutlet" destination="UxH-bc-cwV" id="WIY-Cs-1M0"/>
                         <outlet property="incorrectPasswordLbl" destination="pnz-Te-7E0" id="NN8-Wu-YDt"/>
-                        <outlet property="incorrectUserEmailLbl" destination="Jvu-yQ-Z8a" id="P9E-ft-BDn"/>
+                        <outlet property="incorrectUsernameLbl" destination="Jvu-yQ-Z8a" id="T22-tc-ZEK"/>
                         <outlet property="indicator" destination="7Ei-9t-elb" id="m1A-94-HFM"/>
                         <outlet property="logoImage" destination="M6u-fu-JaD" id="sqn-dB-p2Z"/>
                         <outlet property="passwordTxtField" destination="PGA-GI-B3m" id="xYT-DM-4Bf"/>
-                        <outlet property="userEmailLbl" destination="B5O-dF-r4h" id="9En-fX-e4t"/>
-                        <outlet property="userEmailTxtField" destination="0Uh-W3-lv6" id="xH9-wg-N6H"/>
                         <outlet property="userPasswordLbl" destination="T1C-iQ-YiS" id="SxR-uD-wuG"/>
+                        <outlet property="usernameLbl" destination="B5O-dF-r4h" id="JZn-es-cfe"/>
+                        <outlet property="usernameTxtField" destination="0Uh-W3-lv6" id="ksP-OD-fNL"/>
                         <outlet property="whiteCircleOutlet" destination="mSl-X9-zPS" id="glP-jS-QCF"/>
                     </connections>
                 </viewController>
@@ -760,7 +760,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2783" y="890"/>
+            <point key="canvasLocation" x="2782.7102803738317" y="889.63282937365022"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CKQ-x6-YbC">
@@ -777,7 +777,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2b-oX-usV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1262" y="569"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>

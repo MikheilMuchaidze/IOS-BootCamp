@@ -1,6 +1,4 @@
 import UIKit
-import Firebase
-import FirebaseAuth
 
 protocol newUserToUserLists {
     func registerNewUser(registeredUserName: String, registeredUserPass: String, registeredRepeatPass: String, registeredUserEmail: String)
@@ -35,7 +33,10 @@ class signUpPage: UIViewController {
             let goToAdminPage = storyboard?.instantiateViewController(withIdentifier: "userListTable") as? userListTable
             self.navigationController?.pushViewController(goToAdminPage!, animated: true)
         } else {
-            alertPopUp(title: "Incorrect password!", message: "Admin password is incorrect.", okTitle: "Ok.")
+            let alertmassege = UIAlertController(title: "Incorrect password!", message: "Admin password is incorrect.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "Ok.", style: UIAlertAction.Style.default, handler: nil)
+            alertmassege.addAction(okAction)
+            self.present(alertmassege, animated: true)
         }
     }
     
@@ -71,9 +72,7 @@ class signUpPage: UIViewController {
                 self.userPasswordRegisterTxt.text  != "" &&
                 self.userPasswordRepeatTxt.text  != "" &&
                 self.userEmailRegisterTxt.text  != "" &&
-                self.userPasswordRegisterTxt.text == self.userPasswordRepeatTxt.text{
-                
-                self.signUpFire()
+                self.userPasswordRegisterTxt.text == self.userPasswordRepeatTxt.text {
                 
                 self.newUserDelegate?.registerNewUser(registeredUserName: self.userNameRegisterTxt.text!,
                                                  registeredUserPass: self.userPasswordRegisterTxt.text!,
@@ -130,17 +129,6 @@ class signUpPage: UIViewController {
 
 extension signUpPage {
     
-    //firebase register
-    func signUpFire() {
-        Auth.auth().createUser(withEmail: userEmailRegisterTxt.text!, password: userPasswordRegisterTxt.text!) { authResult, error in
-            guard let user = authResult?.user, error == nil else {
-                print(error?.localizedDescription)
-                return
-            }
-            
-        }
-    }
-    
     func addTapToBackPic() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGoBack))
         backImageBtn.addGestureRecognizer(tapGesture)
@@ -159,19 +147,68 @@ extension signUpPage {
             userPasswordRepeatTxt.text  == "" ||
             userEmailRegisterTxt.text  == "" {
             
-            alertPopUp(title: "Field(s) empty.", message: "All fields must be completed.", okTitle: "Ok.")
+            let alertmassege = UIAlertController(title: "Field(s) empty.", message: "All fields must be completed.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "Ok.", style: UIAlertAction.Style.default, handler: nil)
+            alertmassege.addAction(okAction)
+            self.present(alertmassege, animated: true)
         }
     }
     
     //checking if passwords in password and repeat password fields are similar if not error popup
     func checkForPassSimilarity() {
         if userPasswordRegisterTxt.text != userPasswordRepeatTxt.text {
-            alertPopUp(title: "Passwords not match.", message: "Passwrods must be a match! Try again.", okTitle: "Ok")
+            
+            let alertmassege = UIAlertController(title: "Passwords not match.", message: "Passwrods must be a match! Try again.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+            alertmassege.addAction(okAction)
+            self.present(alertmassege, animated: true)
         }
     }
     
+    //animation to make appearing of backgound circles after view is loaded
+    func animateBackgroundCircles(image: UIImageView, time: Double) {
+        image.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + time ) {
+            
+            //sets the view's scaling to be 120%
+            image.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            
+            //animate the affect
+            UIView.animate(withDuration: 0.3, animations: {
+                image.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                image.isHidden = false
+            })
+        }
+    }
     
-   
+    //animate in a specific view
+    func animateIn(desiredView: UIView) {
+        let backgroundView = self.view!
+        
+        //attach our desired view to the screen (self.view/backgroundView)
+        backgroundView.addSubview(desiredView)
+        
+        //sets the view's scaling to be 120%
+        desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        desiredView.alpha = 0
+        desiredView.center = backgroundView.center
+        
+        //animate the affect
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            desiredView.alpha = 1
+        })
+    }
+    
+    //animate out a specified view
+    func animateOut(desiredView: UIView) {
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            desiredView.alpha = 0
+        }, completion: { _ in
+            desiredView.removeFromSuperview()
+        })
+    }
     
 
 }

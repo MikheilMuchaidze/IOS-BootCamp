@@ -1,6 +1,4 @@
 import UIKit
-import Firebase
-import FirebaseAuth
 
 class SingInPage: UIViewController {
     
@@ -9,18 +7,16 @@ class SingInPage: UIViewController {
     @IBOutlet weak var greenCircleOutlet: UIImageView!
     @IBOutlet weak var whiteCircleOutlet: UIImageView!
     
-    @IBOutlet weak var incorrectUserEmailLbl: UILabel!
+    @IBOutlet weak var incorrectUsernameLbl: UILabel!
     @IBOutlet weak var incorrectPasswordLbl: UILabel!
         
     @IBOutlet weak var logoImage: UIImageView!
     
-    @IBOutlet weak var userEmailLbl: UILabel!
+    @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var userPasswordLbl: UILabel!
     
-    @IBOutlet weak var userEmailTxtField: UITextField!
+    @IBOutlet weak var usernameTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
-    
-    
     
     @IBAction func backBtn(_ sender: Any) {
         greenCircleOutlet.alpha = 0
@@ -40,19 +36,19 @@ class SingInPage: UIViewController {
             
             //username not found when list is empty
             if usersList.isEmpty == true {
-                self.incorrectUserEmailLbl.alpha = 1
+                self.incorrectUsernameLbl.alpha = 1
             } else {
-                self.incorrectUserEmailLbl.alpha = 0
+                self.incorrectUsernameLbl.alpha = 0
             }
         
             //verification of users
             usersList.forEach { user in
                 
                 //already registered username validation
-                if user.username != self.userEmailTxtField.text {
-                    self.incorrectUserEmailLbl.alpha = 1
+                if user.username != self.usernameTxtField.text {
+                    self.incorrectUsernameLbl.alpha = 1
                 } else {
-                    self.incorrectUserEmailLbl.alpha = 0
+                    self.incorrectUsernameLbl.alpha = 0
                 }
                 
                 //already registered username's password validation
@@ -63,8 +59,7 @@ class SingInPage: UIViewController {
                 }
                 
                 //if username presented and password is correct proceed
-                if user.username == self.userEmailTxtField.text && user.password == self.passwordTxtField.text {
-                    self.loginFire()
+                if user.username == self.usernameTxtField.text && user.password == self.passwordTxtField.text {
                     let goToCarSelection = self.storyboard?.instantiateViewController(withIdentifier: "MainCarSelectorViewController") as? MainCarSelectorViewController
                     self.navigationController?.pushViewController(goToCarSelection!, animated: true)
                 }
@@ -85,7 +80,7 @@ class SingInPage: UIViewController {
         whiteCircleOutlet.isHidden = true
         greenCircleOutlet.isHidden = true
         
-        userEmailTxtField.text?.removeAll()
+        usernameTxtField.text?.removeAll()
         passwordTxtField.text?.removeAll()
     }
     
@@ -102,7 +97,7 @@ class SingInPage: UIViewController {
         
         indicator.isHidden = true
 
-        let textFieldsList = [userEmailTxtField, passwordTxtField]
+        let textFieldsList = [usernameTxtField, passwordTxtField]
         
         textFieldsList.forEach { elem in
             elem?.setCorner(radius: 20)
@@ -112,32 +107,26 @@ class SingInPage: UIViewController {
         logoImage.backgroundColor = .clear
         
         //giving starter error messeges 100% transperence
-        incorrectUserEmailLbl.alpha = 0
+        incorrectUsernameLbl.alpha = 0
         incorrectPasswordLbl.alpha = 0
     }
 }
 
+extension UIView {
+    //adding corner radius for textfields
+    func setCorner(radius: CGFloat) {
+        layer.cornerRadius = radius
+        clipsToBounds = true
+    }
+    
+    //adding border width and color for textfields
+    func setBorder(width: CGFloat, color: UIColor) {
+        layer.borderColor = color.cgColor
+        layer.borderWidth = width
+    }
+}
+
 extension SingInPage: newUserToUserLists {
-    
-    //firebase login
-    func loginFire() {
-        Auth.auth().signIn(withEmail: userEmailTxtField.text!, password: passwordTxtField.text!) { [weak self] authResult, error in
-            guard let strongSelf = self else { return }
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-        checkUserInfoFire()
-    }
-    
-    //firebase check user
-    func checkUserInfoFire() {
-        if Auth.auth().currentUser != nil {
-            print(Auth.auth().currentUser?.uid)
-        }
-        
-    }
-    
     func registerNewUser(registeredUserName: String, registeredUserPass: String, registeredRepeatPass: String, registeredUserEmail: String) {
         
         //registering new user
@@ -155,7 +144,10 @@ extension SingInPage: newUserToUserLists {
         if usernamesList.contains(where: { elem in
             elem == registeredUserName
         }) {
-            alertPopUp(title: "User Exists", message: "User with this username already exists", okTitle: "Try again.")
+            let alertmassege = UIAlertController(title: "User Exists", message: "User with this username already exists", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "Try again.", style: UIAlertAction.Style.default, handler: nil)
+            alertmassege.addAction(okAction)
+            self.present(alertmassege, animated: true)
         } else {
             usersList.append(newUser)
             
@@ -166,4 +158,21 @@ extension SingInPage: newUserToUserLists {
     }
 }
 
+extension SingInPage {
+    //animation to make appearing of backgound circles after view is loaded
+    func animateBackgroundCircles(image: UIImageView, time: Double) {
+        image.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + time ) {
+            
+            //sets the view's scaling to be 120%
+            image.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            
+            //animate the affect
+            UIView.animate(withDuration: 0.3, animations: {
+                image.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                image.isHidden = false
+            })
+        }
+    }
+}
 
