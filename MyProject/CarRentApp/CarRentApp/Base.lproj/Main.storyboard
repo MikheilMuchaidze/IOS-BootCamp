@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952.1739130434785" y="116.51785714285714"/>
+            <point key="canvasLocation" x="1977" y="569"/>
         </scene>
         <!--Sing In Page-->
         <scene sceneID="xeZ-kP-SDh">
@@ -777,7 +777,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2b-oX-usV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="116.51785714285714"/>
+            <point key="canvasLocation" x="1262" y="569"/>
         </scene>
     </scenes>
     <resources>
