@@ -1,8 +1,15 @@
-//
-//  TopRatedMovie.swift
-//  Muchaidze_Lecture_22
-//
-//  Created by Misha Muchaidze on 20220813...
-//
+import UIKit
 
-import Foundation
+struct MovieResponse: Codable {
+    
+    struct Movie: Codable {
+        let name: String
+        let id: Int
+        let vote_average: Double
+        let vote_count: Int
+    }
+    
+    let results: [Movie]
+}
+
+
