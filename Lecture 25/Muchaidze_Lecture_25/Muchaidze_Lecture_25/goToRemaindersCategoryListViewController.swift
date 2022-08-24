@@ -38,13 +38,16 @@ extension goToRemaindersCategoryListViewController: UITableViewDelegate, UITable
         let itemsDir = try? FileManager.default.contentsOfDirectory(atPath: fileManagerUrl!.path)
         let filteredDir = itemsDir?.filter({ elem in
             elem != ".DS_Store"
-        })
+        }).sorted()
         let currentfilteredDir = filteredDir![indexPath.row]
         cell.categoryNameLbl.text = currentfilteredDir
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
     
     
     

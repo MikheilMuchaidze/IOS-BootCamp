@@ -16,6 +16,8 @@
 		24B0B65C28B6012900C8ADDA /* goToRemaindersCategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0B65B28B6012900C8ADDA /* goToRemaindersCategoryListViewController.swift */; };
 		24B0B65F28B6031D00C8ADDA /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0B65E28B6031D00C8ADDA /* CategoryTableViewCell.swift */; };
 		24B0B66128B6643400C8ADDA /* Remainder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0B66028B6643400C8ADDA /* Remainder.swift */; };
+		24B0B66328B6826C00C8ADDA /* RemaindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0B66228B6826C00C8ADDA /* RemaindersTableViewController.swift */; };
+		24B0B66528B6827900C8ADDA /* RemaindersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0B66428B6827900C8ADDA /* RemaindersTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		24B0B65B28B6012900C8ADDA /* goToRemaindersCategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goToRemaindersCategoryListViewController.swift; sourceTree = "<group>"; };
 		24B0B65E28B6031D00C8ADDA /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		24B0B66028B6643400C8ADDA /* Remainder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remainder.swift; sourceTree = "<group>"; };
+		24B0B66228B6826C00C8ADDA /* RemaindersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemaindersTableViewController.swift; sourceTree = "<group>"; };
+		24B0B66428B6827900C8ADDA /* RemaindersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemaindersTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				24B0B64B28B556A100C8ADDA /* ViewController.swift */,
 				24B0B65B28B6012900C8ADDA /* goToRemaindersCategoryListViewController.swift */,
 				24B0B65E28B6031D00C8ADDA /* CategoryTableViewCell.swift */,
+				24B0B66228B6826C00C8ADDA /* RemaindersTableViewController.swift */,
+				24B0B66428B6827900C8ADDA /* RemaindersTableViewCell.swift */,
 				24B0B64D28B556A100C8ADDA /* Main.storyboard */,
 				24B0B65028B556A300C8ADDA /* Assets.xcassets */,
 				24B0B65228B556A300C8ADDA /* LaunchScreen.storyboard */,
@@ -150,7 +156,9 @@
 				24B0B65F28B6031D00C8ADDA /* CategoryTableViewCell.swift in Sources */,
 				24B0B66128B6643400C8ADDA /* Remainder.swift in Sources */,
 				24B0B64C28B556A100C8ADDA /* ViewController.swift in Sources */,
+				24B0B66328B6826C00C8ADDA /* RemaindersTableViewController.swift in Sources */,
 				24B0B65C28B6012900C8ADDA /* goToRemaindersCategoryListViewController.swift in Sources */,
+				24B0B66528B6827900C8ADDA /* RemaindersTableViewCell.swift in Sources */,
 				24B0B64828B556A100C8ADDA /* AppDelegate.swift in Sources */,
 				24B0B64A28B556A100C8ADDA /* SceneDelegate.swift in Sources */,
 			);

@@ -117,6 +117,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-mx-rSe">
+                                <rect key="frame" x="20" y="64" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mDd-mx-rSe" secondAttribute="height" multiplier="1:1" id="WgI-r5-oAu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="chevron.backward" catalog="system" title="">
+                                    <color key="baseBackgroundColor" systemColor="systemMintColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goBack:" destination="hah-Ob-9i3" eventType="touchUpInside" id="GHm-nL-env"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-eS-gJ5">
                                 <rect key="frame" x="20" y="120" width="388" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -147,19 +160,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-mx-rSe">
-                                <rect key="frame" x="20" y="64" width="37" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="mDd-mx-rSe" secondAttribute="height" multiplier="1:1" id="WgI-r5-oAu"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="chevron.backward" catalog="system" title="">
-                                    <color key="baseBackgroundColor" systemColor="systemMintColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="goBack:" destination="hah-Ob-9i3" eventType="touchUpInside" id="GHm-nL-env"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pFg-c0-YUr"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
@@ -182,6 +182,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oV4-OL-f0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1774.7663551401868" y="115.98272138228943"/>
+        </scene>
+        <!--Remainders Table View Controller-->
+        <scene sceneID="skp-o5-tC7">
+            <objects>
+                <viewController storyboardIdentifier="RemaindersTableViewController" id="Osl-cM-NAn" customClass="RemaindersTableViewController" customModule="Muchaidze_Lecture_25" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hg9-g5-LMc">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg2-0H-l8r">
+                                <rect key="frame" x="154" y="64" width="120" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iAY-BK-q35">
+                                <rect key="frame" x="20" y="120" width="388" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RemaindersTableViewCell" id="TC3-OY-nTP" customClass="RemaindersTableViewCell" customModule="Muchaidze_Lecture_25" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="388" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TC3-OY-nTP" id="hPt-HV-FJM">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remainder Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYP-LI-Dtp">
+                                                    <rect key="frame" x="20" y="18" width="348" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uYP-LI-Dtp" firstAttribute="centerY" secondItem="hPt-HV-FJM" secondAttribute="centerY" id="MFn-uz-kwN"/>
+                                                <constraint firstItem="uYP-LI-Dtp" firstAttribute="leading" secondItem="hPt-HV-FJM" secondAttribute="leading" constant="20" id="RgE-LR-RWh"/>
+                                                <constraint firstAttribute="trailing" secondItem="uYP-LI-Dtp" secondAttribute="trailing" constant="20" id="o4q-GL-dSY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kpt-5E-t96"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="iAY-BK-q35" firstAttribute="leading" secondItem="kpt-5E-t96" secondAttribute="leading" constant="20" id="E3V-D1-MfO"/>
+                            <constraint firstItem="kpt-5E-t96" firstAttribute="trailing" secondItem="iAY-BK-q35" secondAttribute="trailing" constant="20" id="HDo-Ip-GZa"/>
+                            <constraint firstItem="iAY-BK-q35" firstAttribute="top" secondItem="cg2-0H-l8r" secondAttribute="bottom" constant="20" id="LCI-wH-LEc"/>
+                            <constraint firstItem="cg2-0H-l8r" firstAttribute="top" secondItem="kpt-5E-t96" secondAttribute="top" constant="20" id="SdD-yi-KJB"/>
+                            <constraint firstItem="kpt-5E-t96" firstAttribute="bottom" secondItem="iAY-BK-q35" secondAttribute="bottom" constant="50" id="dqO-dt-uGA"/>
+                            <constraint firstItem="cg2-0H-l8r" firstAttribute="centerX" secondItem="kpt-5E-t96" secondAttribute="centerX" id="xCD-eO-yJr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xyT-pX-SvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2543" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ndH-05-k8e">
