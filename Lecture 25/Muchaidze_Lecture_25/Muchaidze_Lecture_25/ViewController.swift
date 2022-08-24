@@ -36,6 +36,13 @@ class ViewController: UIViewController {
         
     }
     
+    
+    @IBAction func goToRemaindersCategoryList(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "goToRemaindersCategoryListViewController") as! goToRemaindersCategoryListViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
 
 }
 
