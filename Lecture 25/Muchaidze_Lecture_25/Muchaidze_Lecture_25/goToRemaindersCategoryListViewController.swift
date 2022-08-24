@@ -1,8 +1,10 @@
 import UIKit
 
 class goToRemaindersCategoryListViewController: UIViewController {
-    
+
     @IBOutlet weak var categoryTableView: UITableView!
+    
+    let fileManagerUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -10,10 +12,9 @@ class goToRemaindersCategoryListViewController: UIViewController {
         categoryTableView.delegate = self
         categoryTableView.dataSource = self
         
+        print(fileManagerUrl!.path)
         
-
     }
-    
 
 
     @IBAction func goBack(_ sender: Any) {
@@ -25,14 +26,23 @@ class goToRemaindersCategoryListViewController: UIViewController {
 
 
 extension goToRemaindersCategoryListViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        let numberOfItems = try? FileManager.default.contentsOfDirectory(atPath: fileManagerUrl!.path)
+        return numberOfItems!.count - 1
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = categoryTableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
+        let itemsDir = try? FileManager.default.contentsOfDirectory(atPath: fileManagerUrl!.path)
+        let filteredDir = itemsDir?.filter({ elem in
+            elem != ".DS_Store"
+        })
+        let currentfilteredDir = filteredDir![indexPath.row]
+        cell.categoryNameLbl.text = currentfilteredDir
+        
+        return cell
     }
     
     
@@ -40,3 +50,6 @@ extension goToRemaindersCategoryListViewController: UITableViewDelegate, UITable
     
     
 }
+
+
+
