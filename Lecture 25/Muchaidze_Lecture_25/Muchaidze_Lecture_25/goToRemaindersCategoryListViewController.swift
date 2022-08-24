@@ -46,7 +46,8 @@ extension goToRemaindersCategoryListViewController: UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "RemaindersTableViewController") as? RemaindersTableViewController else { return }
+        present(vc, animated: true)
     }
     
     

@@ -236,6 +236,10 @@
                             <constraint firstItem="cg2-0H-l8r" firstAttribute="centerX" secondItem="kpt-5E-t96" secondAttribute="centerX" id="xCD-eO-yJr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="RemaindersTable" destination="iAY-BK-q35" id="HKE-cw-f0z"/>
+                        <outlet property="categoryNameLbl" destination="cg2-0H-l8r" id="ELt-Vf-6YI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyT-pX-SvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
