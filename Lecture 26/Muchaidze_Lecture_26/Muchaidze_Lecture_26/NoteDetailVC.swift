@@ -11,7 +11,6 @@ class NoteDetailVC: UIViewController {
 
     }
 
-    
     @IBAction func saveBtn(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -31,6 +30,7 @@ class NoteDetailVC: UIViewController {
         }
         
     }
+    
     
 }
 
