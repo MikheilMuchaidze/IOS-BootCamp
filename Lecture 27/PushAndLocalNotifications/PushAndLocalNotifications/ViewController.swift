@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sendPushAction(_ sender: Any) {
-        LocalLocationManager.register(notification: LocalNotification(id: UUID().uuidString , title: "local notification", message: "see info"), duration: 3, repeats: false, userInfo: ["name": [1,2,3,3]])
+        LocalLocationManager.register(notification: LocalNotification(id: UUID().uuidString , title: "local notification", message: "see info"), duration: 1, repeats: false, userInfo: ["name": [1,2,3,3]])
     }
 }
 

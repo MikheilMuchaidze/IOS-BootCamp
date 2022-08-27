@@ -57,6 +57,13 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func notificationRequsetBtn(_ sender: Any) {
+        let notification = LocalNotification(id: UUID().uuidString, title: "Test Notification", message: "Testing my first notification")
+        
+        LocalLocationManager.register(notifications: LocalNotification(id: UUID().uuidString, title: "Test Notification", message: "Testing my first notification"), duration: 3, repeats: false, userInfo: ["test": 1])
+    }
+    
+    
 
 }
 
