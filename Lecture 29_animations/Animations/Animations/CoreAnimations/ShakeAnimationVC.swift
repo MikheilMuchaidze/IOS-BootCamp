@@ -18,6 +18,7 @@ class ShakeAnimationVC: UIViewController {
         viewForshake.backgroundColor = .orange
         
         button.addTarget(self, action: #selector(shakeTapped(_:)), for: .primaryActionTriggered)
+        button.tintColor = .red
         
         view.addSubview(viewForshake)
         view.addSubview(button)
